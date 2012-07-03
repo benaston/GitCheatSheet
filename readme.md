@@ -9,5 +9,5 @@ Information on working copy, index and remote.
 
 git commit --amend  to ammend the previous commit with the current added changes
 
-
+git log sha - will show the log around that sha
 
