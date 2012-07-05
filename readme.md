@@ -12,3 +12,5 @@ git commit --amend  to ammend the previous commit with the current added changes
 git log sha - will show the log around that sha
 
 git checkout - (switch back to the branch you were previously on)
+
+git commit --amend
