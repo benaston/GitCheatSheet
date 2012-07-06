@@ -14,3 +14,7 @@ git log sha - will show the log around that sha
 git checkout - (switch back to the branch you were previously on)
 
 git commit --amend
+
+git checkout - (go to previous branch)
+
+git branch -m <branch name> <new branch name>
