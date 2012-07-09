@@ -1,6 +1,10 @@
 Git Cheat Sheet
 ====
 
+Reset to remote head: git reset --hard origin/HEAD (using git-tfs: git reset --hard tfs/default)
+
+`git stash save "message associated with stash"`
+
 Yet another cheat sheet of git commands.
 
 Todo add basic log commands (with grep pipe), rebase commands for commit squashing (rebase -i HEAD^3, f).
