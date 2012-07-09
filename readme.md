@@ -22,3 +22,7 @@ git commit --amend
 git checkout - (go to previous branch)
 
 git branch -m <branch name> <new branch name>
+
+diff with remote for file
+
+git diff remote/uri file
