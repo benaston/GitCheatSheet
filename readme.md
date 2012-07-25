@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Reset single file to remote head git checkout tfs/default file-name
+
 Reset to remote head: git reset --hard origin/HEAD (using git-tfs: git reset --hard tfs/default)
 
 `git stash save "message associated with stash"`
