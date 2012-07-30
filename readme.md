@@ -34,3 +34,5 @@ git diff remote/uri file
 git log --name-status --grep Ben
 
 git log --name-status | grep Ben -A 7 | less
+
+git show --pretty="format:" --name-only bd61ad98
