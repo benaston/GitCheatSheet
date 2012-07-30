@@ -30,3 +30,7 @@ git branch -m <branch name> <new branch name>
 diff with remote for file
 
 git diff remote/uri file
+
+git log --name-status --grep Ben
+
+git log --name-status | grep Ben -A 7 | less
