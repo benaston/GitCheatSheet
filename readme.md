@@ -27,12 +27,8 @@ git checkout - (go to previous branch)
 
 git branch -m <branch name> <new branch name>
 
-diff with remote for file
+View diff with remote for single file: `git diff remote/uri file`
 
-git diff remote/uri file
+View the commits with a message containing a word: `git log --name-status --grep Ben` or `git log --name-status | grep Ben -A 7 | less`
 
-git log --name-status --grep Ben
-
-git log --name-status | grep Ben -A 7 | less
-
-git show --pretty="format:" --name-only bd61ad98
+View the modifications associated with a sha: `git show bd61ad98`
