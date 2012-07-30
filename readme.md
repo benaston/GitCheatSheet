@@ -32,3 +32,5 @@ View diff with remote for single file: `git diff remote/uri file`
 View the commits with a message containing a word: `git log --name-status --grep Ben` or `git log --name-status | grep Ben -A 7 | less`
 
 View the modifications associated with a sha: `git show bd61ad98`
+
+Show file at a revision: `git show HEAD~4:index.html` or `git show 67834b:index.html`
