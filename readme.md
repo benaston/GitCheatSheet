@@ -1,6 +1,10 @@
 Git Cheat Sheet
 ====
 
+Show the history for a file, following renames: `git log --follow -p file`
+
+Show the changes associated with a commit: `git show <sha>`
+
 Diff a single file with index: git diff -- <file name> or git diff HEAD -- <file name>
 
 Reset single file to remote head git checkout tfs/default file-name
