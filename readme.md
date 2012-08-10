@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Show the log of commits for a single user: `git log --author="Jon"`
+
 Show the history for a file, following renames: `git log --follow -p file`
 
 Show the changes associated with a commit: `git show <sha>`
