@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Reset a single file to a specific commit: `git checkout <sha> file`
+
 Show the log of commits for a single user: `git log --author="Jon"`
 
 Show the history for a file, following renames: `git log --follow -p file`
