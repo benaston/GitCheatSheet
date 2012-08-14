@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Find a commit with a commit message matching an expression: `git log --grep=C211676`
+
 Reset a single file to a specific commit: `git checkout <sha> file`
 
 Show the log of commits for a single user: `git log --author="Jon"`
