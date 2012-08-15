@@ -1,6 +1,23 @@
 Git Cheat Sheet
 ====
 
+Reversion of a remote change:
+
+The following git commands enable you revert a remote change...
+
+# reset your local index to the desired sha
+git reset --hard sha
+
+# move the branch pointer back to the HEAD immediately preceding the HEAD at the desired SHA
+# The 'soft' means that the changes made between the HEAD-1 and HEAD at the desired SHA
+# are left in place and are visible as 'new' changes
+git reset --soft HEAD@{1}
+
+git commit -m "Revert to sha"
+
+git-tfs checkintool (or whatever syntax you use for pushing to the remote)
+
+
 Find a commit with a commit message matching an expression: `git log --grep=C211676`
 
 Reset a single file to a specific commit: `git checkout <sha> file`
