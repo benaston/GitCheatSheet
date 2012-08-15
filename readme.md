@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Grepping: `git log --grep='\[92\]'` - note the single quotes!
+
 Reversion of a remote change:
 
 The following git commands enable you revert a remote change...
