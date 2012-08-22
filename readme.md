@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Undo `git add .`: `git reset`
+
 Grepping: `git log --grep='\[92\]'` - note the single quotes!
 
 Reversion of a remote change:
