@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+for $doc in doc() return xdmp:document-delete(xdmp:node-uri($doc))
+
 Undo `git add .`: `git reset`
 
 Grepping: `git log --grep='\[92\]'` - note the single quotes!
