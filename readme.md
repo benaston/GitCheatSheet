@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Differences between two branches `git diff --name-status master..branch`
+
 for $doc in doc() return xdmp:document-delete(xdmp:node-uri($doc))
 
 Undo `git add .`: `git reset`
