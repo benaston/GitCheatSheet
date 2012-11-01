@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Log at certain times: git log --name-status --since="17th AUgust 2012" --until="18th August 2012" --author="Ben"
+
 Differences between two branches `git diff --name-status master..branch`
 
 for $doc in doc() return xdmp:document-delete(xdmp:node-uri($doc))
