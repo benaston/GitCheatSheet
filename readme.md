@@ -1,6 +1,10 @@
 Git Cheat Sheet
 ====
 
+View file at revision:
+
+`git show <revision>:./file/path.foo`
+
 Log at certain times: git log --name-status --since="17th AUgust 2012" --until="18th August 2012" --author="Ben"
 
 Differences between two branches `git diff --name-status master..branch`
