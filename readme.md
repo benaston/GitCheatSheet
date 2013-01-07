@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Pull from a remote and avoid the merge commit: `git pull --rebase`
+
 View file at revision:
 
 `git show <revision>:./file/path.foo`
