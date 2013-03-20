@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Find latest version of a deleted file: `git log --name-status --follow -p -- Src/DnR.Editorial.App/Controllers/LoggerController.cs`
+
 Pull from a remote and avoid the merge commit: `git pull --rebase`
 
 View file at revision:
