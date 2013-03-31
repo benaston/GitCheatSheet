@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Graph changes over time: `git log --graph --decorate --oneline --author="benaston" --since="11 Feb"`
+
 Find latest version of a deleted file: `git log --name-status --follow -p -- Src/DnR.Editorial.App/Controllers/LoggerController.cs`
 
 Pull from a remote and avoid the merge commit: `git pull --rebase`
