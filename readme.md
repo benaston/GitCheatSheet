@@ -1,6 +1,10 @@
 Git Cheat Sheet
 ====
 
+Nicer git blame: ` git blame -c Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
+
+Diff between two versions: `git diff 65d18cf7^1..65d18cf7 Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
+
 Graph changes over time: `git log --graph --decorate --oneline --author="benaston" --since="11 Feb"`
 
 Find latest version of a deleted file: `git log --name-status --follow -p -- Src/DnR.Editorial.App/Controllers/LoggerController.cs`
