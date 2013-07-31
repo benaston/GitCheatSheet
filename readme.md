@@ -1,5 +1,8 @@
 Git Cheat Sheet
 ====
+
+Keep index and stash: `git stash --keep-index`
+
 Best git tutorial bar none: http://www.atlassian.com/git/tutorial/git-basics
 
 Nicer git blame: ` git blame -c Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
