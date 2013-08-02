@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Git log, showing file diff: `git log -p <filename>`
+
 Keep index and stash: `git stash --keep-index`
 
 Best git tutorial bar none: http://www.atlassian.com/git/tutorial/git-basics
