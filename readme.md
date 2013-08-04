@@ -1,6 +1,100 @@
 Git Cheat Sheet
 ====
 
+##Overview
+
+    working directory -> index -> local repository -> remote repository
+           ^               ^              ^                    ^   
+           |               |              |                    |
+    You do your work here. |              |___                 |
+ 					   |                  |                |
+              You prepare your commits here.  |                |
+                                              |                |
+                                        You commit here.       |    
+                                                               |
+                                                      You push & pull here
+                                                      to integrate with
+                                                      others' work.
+##Branching
+ 
+**Show All:** `git branch`
+ 
+**Change:** `git checkout <branch name>`
+ 
+**New:** `git checkout -b <branch name>`
+ 
+**Delete:** `git branch -D <branch name>`
+ 
+**Difference:** `git diff --name-status <branch1>..<branch2>`
+ 
+**Pull in from another:** `git pull . master`
+
+**Rename:** `git branch -m <new-name-no-spaces>`
+
+##Committing
+
+**Stash everything not added (good for web.config):** `git stash --keep-index`
+
+##Moving through time & commits
+ 
+**Show changes over time:**  `git log`
+
+**Reset to last pulled version:** `git reset --hard tfs/default` 
+
+**Reset to very latest in the remote TFS:**  `git-tfs fetch; git reset --hard tfs/default`
+
+**Stash your work:** `git stash`
+
+**Stash only some of your changes:** `git add <filenames-you-want>` `git stash --keep-index`
+
+**Un-stash your work:** `git stash apply`
+
+**View current work:** `git status`
+
+**Find a commit by message:** `git log --grep <message-regex>`
+
+**Revert To Commit:** `git reset --hard <SHA of commit>`
+
+**Find commit n commits ago:** `git reset --hard HEAD~n`
+ 
+**View commits between dates:** `git log --name-status --since="17th August 2012" --until="18th August 2012" --author="Ben"`
+
+**Fetch and merge in other people's commits:** `git-tfs pull`
+
+**Log for single file:** `git log --name-status <filename>`
+
+**Show changes for a file in a commit:** `git show SHA <filename>`
+
+**Show file at a specific revision:** `git show SHA:<filename>`
+
+**Write a specific version to a file:** `git show SHA:<filename> > output-filename`
+
+**Show all changes in a commit:** `git show --name-status SHA`
+
+**Amend a commit:** `git commit --amend` (and then "i" to insert text, "ESC" to escape insertion mode, "wq" to write the message and quit the text editor)
+
+**Push:** `git-tfs checkintool -i default`
+ 
+##Re-ordering commits
+
+Re-play all your work not yet pushed onto the top of the remote: `git rebase master`
+
+Interactively modify your commits: `git rebase -i <commit-sha-from-which-you-want-to-rebase>` e.g. `git rebase -i HEAD~6` (last six commits).
+
+Most recent at the bottom of the commit list. Fix-up will squash the lower (i.e. later) commit into the higher (i.e. earlier commit). 
+
+##Bash Shortcuts
+ 
+**Clear Screen:** `CTRL+L`
+
+**Clear line:** `CTRL+U`
+
+**History:** `history`
+
+**Explorer in current directory:** `explorer .`
+
+**History search:** `CTRL+R` (then start typing the command)
+
 Git log, showing file diff: `git log -p <filename>`
 
 Keep index and stash: `git stash --keep-index`
