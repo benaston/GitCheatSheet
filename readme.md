@@ -7,7 +7,7 @@ Git Cheat Sheet
            ^               ^              ^                    ^   
            |               |              |                    |
     You do your work here. |              |___                 |
- 					   |                  |                |
+ 					       |                  |                |
               You prepare your commits here.  |                |
                                               |                |
                                         You commit here.       |    
