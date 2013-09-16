@@ -15,6 +15,12 @@ Git Cheat Sheet
                                                       You push & pull here
                                                       to integrate with
                                                       others' work.
+Undo push:
+
+git checkout alpha-0.3.0
+git reset --hard cc4b63bebb6
+git push origin +alpha-0.3.0
+
 ##Branching
  
 **Show All:** `git branch`
