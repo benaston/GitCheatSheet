@@ -21,6 +21,10 @@ git checkout alpha-0.3.0
 git reset --hard cc4b63bebb6
 git push origin +alpha-0.3.0
 
+##Recovering from a major screw-up (lost work)
+
+Find work that has been "lost": `git reflog --grep "Known commit message."`
+
 ##Branching
  
 **Show All:** `git branch`
