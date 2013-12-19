@@ -39,6 +39,10 @@ View diffs in log: `git log -p`
 
 Bring yourself up to date with another branch in a clean way: `git rebase <branch-name-to-pull-from>`.
 
+Undo a merge: use git reset --hard.
+
+**Index is retained across branch switching.**
+
 Undo push:
 
 git checkout alpha-0.3.0
