@@ -41,6 +41,18 @@ Bring yourself up to date with another branch in a clean way: `git rebase <branc
 
 Undo a merge: use git reset --hard.
 
+Fetch brings all the objects from a  remote so that you are then up to date.
+
+Merge combines changes into a branch.
+
+Pull does a fetch and a merge.
+
+Configuring a local branch to be a tracking branch enables use fo push and pull without arguments.
+
+To configure a tracking branch, you need to set the merge attribute of the local branch in the .gitconfig.
+
+e.g. `git branch --track <local> <remote/branch>`
+
 **Index is retained across branch switching.**
 
 Undo push:
