@@ -33,6 +33,12 @@ Create a file named `.gitignore` in the root of the project and populate it with
 
 Include a diff in your commit message: `git commit -v`
 
+View changes between branches: `git diff <brancha> <branchb>` (in this you will conveniently see the changes introduced by branch b)
+
+View diffs in log: `git log -p`
+
+Bring yourself up to date with another branch in a clean way: `git rebase <branch-name-to-pull-from>`.
+
 Undo push:
 
 git checkout alpha-0.3.0
@@ -58,6 +64,10 @@ Find work that has been "lost": `git reflog --grep "Known commit message."`
 **Pull in from another:** `git pull . master`
 
 **Rename:** `git branch -m <new-name-no-spaces>`
+
+Configure GitK:
+
+Update `.gitk` file.
 
 ##Committing
 
