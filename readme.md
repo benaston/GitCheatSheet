@@ -18,11 +18,18 @@ Git Cheat Sheet
 ##Configure
 
 `git config --global user.name "Ben Aston"`
+
 `git config --global user.email "ben@bj.ma"`
+
 `git config --global apply.whitespace nowarn` //do not warn about whitespace changes, useful for languages where whitespace does not matter
+
 `git config --list` //check the current config
+
 `git config --global alias.co checkout` //alias checkout
 
+Create a file named `.gitignore` in the root of the project and populate it with patterns:
+
+`*.log`, for example.
 
 
 Undo push:
