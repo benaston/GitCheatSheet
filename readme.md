@@ -15,6 +15,16 @@ Git Cheat Sheet
                                                       You push & pull here
                                                       to integrate with
                                                       others' work.
+##Configure
+
+`git config --global user.name "Ben Aston"`
+`git config --global user.email "ben@bj.ma"`
+`git config --global apply.whitespace nowarn` //do not warn about whitespace changes, useful for languages where whitespace does not matter
+`git config --list` //check the current config
+`git config --global alias.co checkout` //alias checkout
+
+
+
 Undo push:
 
 git checkout alpha-0.3.0
