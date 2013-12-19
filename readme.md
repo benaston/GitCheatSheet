@@ -31,6 +31,7 @@ Create a file named `.gitignore` in the root of the project and populate it with
 
 `*.log`, for example.
 
+Include a diff in your commit message: `git commit -v`
 
 Undo push:
 
