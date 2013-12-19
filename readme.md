@@ -3,7 +3,7 @@ Git Cheat Sheet
 
 ##Overview
 
-    working directory -> index -> local repository -> remote repository
+    working directory -> index -> local repository -> remote repository (e.g. origin server)
            ^               ^              ^                    ^   
            |               |              |                    |
     You do your work here. |              |___                 |
