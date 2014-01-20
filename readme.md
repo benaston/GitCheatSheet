@@ -17,6 +17,8 @@ Git Cheat Sheet
                                                       others' work.
 ##Configure
 
+`git push origin feature/US72097-Mdmt-Provisioning`
+
 `git config --global user.name "Ben Aston"`
 
 `git config --global user.email "ben@bj.ma"`
