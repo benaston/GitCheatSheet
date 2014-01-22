@@ -17,6 +17,8 @@ Git Cheat Sheet
                                                       others' work.
 ##Configure
 
+`git config push.default current`
+
 `git push origin feature/US72097-Mdmt-Provisioning`
 
 `git config --global user.name "Ben Aston"`
@@ -26,6 +28,11 @@ Git Cheat Sheet
 `git config --global apply.whitespace nowarn` //do not warn about whitespace changes, useful for languages where whitespace does not matter
 
 `git config --list` //check the current config
+
+`git config --global alias.co checkout`
+`git config --global alias.pl pull`
+`git config --global alias.ps push`
+`git config --global alias.co commit`
 
 `git config --global alias.co checkout` //alias checkout
 
