@@ -36,6 +36,10 @@ Git Cheat Sheet
 
 `git config --global alias.co checkout` //alias checkout
 
+File names changed between commits:
+
+`git diff --name-only HEAD^1...HEAD`
+
 Create a file named `.gitignore` in the root of the project and populate it with patterns:
 
 `*.log`, for example.
