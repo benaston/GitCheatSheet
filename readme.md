@@ -50,6 +50,8 @@ View changes between branches: `git diff <brancha> <branchb>` (in this you will 
 
 View diffs in log: `git log -p`
 
+View tracking information: `git branch -vv   # doubly verbose!`
+
 Bring yourself up to date with another branch in a clean way: `git rebase <branch-name-to-pull-from>`.
 
 Undo a merge: use git reset --hard.
