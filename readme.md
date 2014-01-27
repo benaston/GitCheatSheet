@@ -1,6 +1,20 @@
 Git Cheat Sheet
 ====
 
+
+Download tortoisegit from here: (when installing, don't bother with the shell exension).
+
+    git config --global merge.tool tortoisemerge 
+
+    git config --global mergetool.tortoisemerge.cmd '"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe" -base:"$BASE" -theirs:"$REMOTE" -mine:"$LOCAL" -merged:"$MERGED"'
+
+Add to `.gitconfig`:
+
+    [merge]
+        tool = tortoisemerge
+    [mergetool "tortoisemerge"]
+        path = C:\\Program Files\\TortoiseGit\\bin\\tortoisegitmerge.exe
+   
 ##Overview
 
     working directory -> index -> local repository -> remote repository (e.g. origin server)
