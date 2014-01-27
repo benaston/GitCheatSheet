@@ -48,6 +48,8 @@ Include a diff in your commit message: `git commit -v`
 
 View changes between branches: `git diff <brancha> <branchb>` (in this you will conveniently see the changes introduced by branch b)
 
+Delete remote branch: `git push origin :<branch-name>`
+
 View diffs in log: `git log -p`
 
 View tracking information: `git branch -vv   # doubly verbose!`
