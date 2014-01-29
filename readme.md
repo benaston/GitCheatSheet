@@ -1,6 +1,7 @@
 Git Cheat Sheet
 ====
 
+Show from another branch: `git show branch-1:path/file-name.js > ~/Desktop/foo.js`
 Configure line endings: ` git config core.autocrlf false` (or use input) (see below for explanation).
 
 View current setting:  `git config core.autocrlf`
