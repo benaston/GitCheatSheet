@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Filter by type of change: `git diff --diff-filter=M us78044-form-definition-in-search-results..2-merge-from-paul-2 --name-status`
+
 Show all files affected by merge including those fast forwarded: git diff 028343b..c252785 --name-status
 Show from another branch: `git show branch-1:path/file-name.js > ~/Desktop/foo.js`
 Configure line endings: ` git config core.autocrlf false` (or use input) (see below for explanation).
