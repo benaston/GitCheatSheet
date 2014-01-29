@@ -1,9 +1,9 @@
 Git Cheat Sheet
 ====
 
-Configure line endings: 
+Configure line endings: ` git config core.autocrlf false` (or use input) (see below for explanation).
 
-Explanation: `git config --global core.autocrlf = input` (see below for explanation).
+View current setting:  `git config core.autocrlf`
 
 This is how core.autocrlf appears to work currently (or at least since v1.7.2 from what I am aware):
 
