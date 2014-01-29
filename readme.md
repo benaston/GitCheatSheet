@@ -1,6 +1,22 @@
 Git Cheat Sheet
 ====
 
+Configure line endings: 
+
+Explanation: `git config --global core.autocrlf = input` (see below for explanation).
+
+This is how core.autocrlf appears to work currently (or at least since v1.7.2 from what I am aware):
+
+core.autocrlf = true
+Text files checked-out from the repository will have LF EOL characters normalized to CRLF in your working tree.
+Text files in your working tree with CRLF EOL characters are normalized to LF when committed back to the repository.
+core.autocrlf = input
+Text files checked-out from the repository will keep original EOL characters in your working tree.
+Text files in your working tree with CRLF EOL characters are normalized to LF when committed back to the repository.
+core.autocrlf = false
+core.eol dictates EOL characters in the text files of your working tree.
+core.eol = native by default, which means Windows EOLs are CRLF and Unix-based OS are LF in working trees.
+Repository gitattributes settings determines EOL character normalization for commits to the repository (default is normalization to LF EOL characters).
 
 Download tortoisegit from here: (when installing, don't bother with the shell exension).
 
