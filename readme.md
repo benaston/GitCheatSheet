@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Difference between a single file on two branches:  `git diff master~20:pom.xml pom.xml`
+
 Filter by type of change: `git diff --diff-filter=M us78044-form-definition-in-search-results..2-merge-from-paul-2 --name-status`
 
 Show all files affected by merge including those fast forwarded: git diff 028343b..c252785 --name-status
