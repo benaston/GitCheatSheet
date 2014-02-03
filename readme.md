@@ -1,6 +1,10 @@
 Git Cheat Sheet
 ====
 
+`sudo service mongodb start`
+`sudo service mongodb stop`
+
+
 List branches by "creator": `git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n | grep "Ben Aston"`
 
 Difference between a single file on two branches:  `git diff master~20:pom.xml pom.xml`
