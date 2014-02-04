@@ -4,6 +4,9 @@ Git Cheat Sheet
 `sudo service mongodb start`
 `sudo service mongodb stop`
 
+Checkout remote branch:
+
+`git checkout -b test origin/test`
 
 List branches by "creator": `git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n | grep "Ben Aston"`
 
