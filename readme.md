@@ -1,5 +1,8 @@
 Git Cheat Sheet
 ====
+
+Show changes made in a single commit for a single file: `git show <sha> <file>`
+
 Show commits from *all* branches: `git log --all` (plain git log just shows the commits leading up to the current HEAD)
 
 `sudo service mongodb start`
