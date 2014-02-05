@@ -1,5 +1,6 @@
 Git Cheat Sheet
 ====
+Show commits from *all* branches: `git log --all` (plain git log just shows the commits leading up to the current HEAD)
 
 `sudo service mongodb start`
 `sudo service mongodb stop`
