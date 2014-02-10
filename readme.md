@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+Replay your new commits on top of everyone elses work `git fetch && git rebase master` (if you want to rebase against `master`)
+
 Show changes made in a single commit for a single file: `git show <sha> <file>`
 
 Show commits from *all* branches: `git log --all` (plain git log just shows the commits leading up to the current HEAD)
