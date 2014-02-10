@@ -1,6 +1,9 @@
 Git Cheat Sheet
 ====
 
+Pull a single commit: `git cherry-pick <sha>`, `git mergetool`, `git cherry-pick --continue`.
+
+
 Replay your new commits on top of everyone elses work `git fetch && git rebase master` (if you want to rebase against `master`)
 
 Show changes made in a single commit for a single file: `git show <sha> <file>`
