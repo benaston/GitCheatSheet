@@ -1,6 +1,12 @@
 Git Cheat Sheet
 ====
 
+##VI
+
+`/` to start search.
+
+##Git
+
 Pull a single commit: `git cherry-pick <sha>`, `git mergetool`, `git cherry-pick --continue`.
 
 
