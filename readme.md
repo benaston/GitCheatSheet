@@ -7,6 +7,8 @@ Git Cheat Sheet
 
 ##Git
 
+Delete a file: `git rm <file>`
+
 Pull a single commit: `git cherry-pick <sha>`, `git mergetool`, `git cherry-pick --continue`.
 
 
