@@ -21,7 +21,7 @@ Show commits from *all* branches: `git log --all` (plain git log just shows the 
 `sudo service mongodb start`
 `sudo service mongodb stop`
 
-Checkout remote branch:
+Checkout remote branch and track:
 
 `git checkout -b test origin/test`
 
