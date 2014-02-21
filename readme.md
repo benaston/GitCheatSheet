@@ -7,6 +7,10 @@ Git Cheat Sheet
 
 ##Git
 
+Create patch from last commit: `git show HEAD > some-patch0001.patch`
+
+Create patch for specific commit: `git format-patch HEAD^ --stdout > patchfile.patch`
+
 Change timestamp of commit: `git commit --amend --date="Mon Feb 17 14:14:14 2014 +0000"`
 Remove untracked files and directories (WARNING this will remove files): `git clean -df`. (`-n` does a dry run)
 
