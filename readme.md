@@ -7,6 +7,8 @@ Git Cheat Sheet
 
 ##Git
 
+Set alias: `git config --global alias.st status` 
+
 Set remote URL: `git remote set-url heroku git@heroku.com:intense-dusk-2508.git`
 
 Create patch from last commit: `git show HEAD > some-patch0001.patch`
