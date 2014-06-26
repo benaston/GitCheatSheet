@@ -7,6 +7,8 @@ Git Cheat Sheet
 
 ##Git
 
+Create remote branch: `git checkout -b foo && git push origin foo` (pushing creates the branch)
+
 Set alias: `git config --global alias.st status` 
 
 Set remote URL: `git remote set-url heroku git@heroku.com:intense-dusk-2508.git`
