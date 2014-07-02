@@ -7,6 +7,8 @@ Git Cheat Sheet
 
 ##Git
 
+Show staged changes (i.e. changes in the index): `git diff --cached`
+
 Create remote branch: `git checkout -b foo && git push origin foo` (pushing creates the branch)
 
 Set alias: `git config --global alias.st status` 
