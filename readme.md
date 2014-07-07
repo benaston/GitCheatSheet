@@ -7,6 +7,8 @@ Git Cheat Sheet
 
 ##Git
 
+With stash, use `git pull  -r` when attempting to push new changes to a remote feature branch, to ensure you are up to date.
+
 Show staged changes (i.e. changes in the index): `git diff --cached`
 
 Create remote branch: `git checkout -b foo && git push origin foo` (pushing creates the branch)
