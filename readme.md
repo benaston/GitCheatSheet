@@ -7,6 +7,10 @@ Git Cheat Sheet
 
 ##Git
 
+Un-add a file: `git reset <filename>`.
+
+Un-add everything staged: `git reset` or `git rm -r --cached .` (note the dot).
+
 With stash, use `git pull  -r` when attempting to push new changes to a remote feature branch, to ensure you are up to date.
 
 Show staged changes (i.e. changes in the index): `git diff --cached`
