@@ -17,8 +17,8 @@ Show staged changes (i.e. changes in the index): `git diff --cached`
 
 Create remote branch: `git checkout -b foo && git push origin foo` (pushing creates the branch)
 
-Set alias: `git config --global alias.st status` 
-            `git config --global alias.br branch`
+Set alias: `git config --global alias.st status &&` 
+            `git config --global alias.br branch &&`
             `git config --global alias.co checkout`
 
 Set remote URL: `git remote set-url heroku git@heroku.com:intense-dusk-2508.git`
