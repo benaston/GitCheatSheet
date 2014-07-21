@@ -7,6 +7,8 @@ Git Cheat Sheet
 
 ##Git
 
+Tag: git tag -a 0.0.2 -m "Tagging 0.0.2 <Ben>"
+
 Un-add a file: `git reset <filename>`.
 
 Un-add everything staged: `git reset` or `git rm -r --cached .` (note the dot).
