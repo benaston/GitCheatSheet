@@ -7,7 +7,9 @@ Git Cheat Sheet
 
 ##Git
 
-Tag: git tag -a 0.0.2 -m "Tagging 0.0.2 <Ben>"
+Change the author of a commit: `git commit --amend --author "New Author Name <email@address.com>" `
+
+Tag: `git tag -a 0.0.2 -m "Tagging 0.0.2 <Ben>"`
 
 Un-add a file: `git reset <filename>`.
 
