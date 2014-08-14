@@ -1,6 +1,8 @@
 Git Cheat Sheet
 ====
 
+List remote branches: `git branch -r`
+
 ##VI
 
 `/` to start search.
