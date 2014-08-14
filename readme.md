@@ -40,27 +40,38 @@ List remote branches: `git branch -r`
 ####Create remote branch
 `git checkout -b foo && git push origin foo` (pushing creates the branch)
 
-Set alias: `git config --global alias.st status &&` 
-            `git config --global alias.br branch &&`
-            `git config --global alias.co checkout`
+####Set alias
+`git config --global alias.st status &&` 
+`git config --global alias.br branch &&`
+`git config --global alias.co checkout`
 
-Set remote URL: `git remote set-url heroku git@heroku.com:intense-dusk-2508.git`
+####Set remote URL
+`git remote set-url heroku git@heroku.com:intense-dusk-2508.git`
 
-Create patch from last commit: `git show HEAD > some-patch0001.patch`
+####Create patch from last commit
+`git show HEAD > some-patch0001.patch`
 
-Create patch for specific commit: `git format-patch HEAD^ --stdout > patchfile.patch`
+####Create patch for specific commit
+`git format-patch HEAD^ --stdout > patchfile.patch`
 
-Change timestamp of commit: `git commit --amend --date="Mon Feb 17 14:14:14 2014 +0000"`
-Remove untracked files and directories (WARNING this will remove files): `git clean -df`. (`-n` does a dry run)
+####Change timestamp of commit
+`git commit --amend --date="Mon Feb 17 14:14:14 2014 +0000"`
 
-Delete a file: `git rm <file>`
+####Remove untracked files and directories (WARNING this will remove files)
+`git clean -df`. (`-n` does a dry run)
 
-Pull a single commit: `git cherry-pick <sha>`, `git mergetool`, `git cherry-pick --continue`.
+####Delete a file
+`git rm <file>`
+
+####Pull a single commit
+`git cherry-pick <sha>`, `git mergetool`, `git cherry-pick --continue`.
 
 
-Replay your new commits on top of everyone elses work `git fetch && git rebase master` (if you want to rebase against `master`)
+####Replay your new commits on top of everyone elses work
+`git fetch && git rebase master` (if you want to rebase against `master`)
 
-Show changes made in a single commit for a single file: `git show <sha> <file>`
+####Show changes made in a single commit for a single file
+`git show <sha> <file>`
 
 Show commits from *all* branches: `git log --all` (plain git log just shows the commits leading up to the current HEAD)
 
