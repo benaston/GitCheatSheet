@@ -9,7 +9,7 @@ List remote branches: `git branch -r`
 
 ##Git
 
-###Cherry pick from another repo:
+###Cherry pick from another repo
 
  - `git remote add my-repo-to-pull-from /c/my-location/my-repo-to-pull-from/.git`
  - `git fetch my-repo-to-pull-from`
