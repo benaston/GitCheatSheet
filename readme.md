@@ -9,13 +9,11 @@ List remote branches: `git branch -r`
 
 ##Git
 
-Cherry pick from another repo:
+###Cherry pick from another repo:
 
-On the repo to pull into:
-
-            `git remote add my-repo-to-pull-from /c/my-location/my-repo-to-pull-from/.git`
-            `git fetch my-repo-to-pull-from`
-            `git cherry-pick <sha-in-the-repo-to-pull-from>`
+`git remote add my-repo-to-pull-from /c/my-location/my-repo-to-pull-from/.git`
+`git fetch my-repo-to-pull-from`
+`git cherry-pick <sha-in-the-repo-to-pull-from>`
 
 Change the author of a commit: `git commit --amend --author "New Author Name <email@address.com>" `
 
