@@ -31,6 +31,9 @@ List remote branches: `git branch -r`
 
 `git reset` or `git rm -r --cached .` (note the dot).
 
+####Remvoe remote
+`git remote rm <remote-name>`
+
 ####Pull via rebase
 `git pull  -r`
 
