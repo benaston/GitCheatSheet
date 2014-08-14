@@ -23,15 +23,22 @@ List remote branches: `git branch -r`
 
 `git tag -a 0.0.2 -m "Tagging 0.0.2 <Ben>"`
 
-Un-add a file: `git reset <filename>`.
+####Un-add a file
 
-Un-add everything staged: `git reset` or `git rm -r --cached .` (note the dot).
+`git reset <filename>`.
 
-With stash, use `git pull  -r` when attempting to push new changes to a remote feature branch, to ensure you are up to date.
+####Un-add everything staged
 
-Show staged changes (i.e. changes in the index): `git diff --cached`
+`git reset` or `git rm -r --cached .` (note the dot).
 
-Create remote branch: `git checkout -b foo && git push origin foo` (pushing creates the branch)
+####Pull via rebase
+`git pull  -r`
+
+####Show staged changes (i.e. changes in the index)
+`git diff --cached`
+
+####Create remote branch
+`git checkout -b foo && git push origin foo` (pushing creates the branch)
 
 Set alias: `git config --global alias.st status &&` 
             `git config --global alias.br branch &&`
