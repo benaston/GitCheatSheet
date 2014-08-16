@@ -59,48 +59,31 @@ reports
 
 #####Checkout remote branch and track `git checkout -b test origin/test`
 
-####View changes between branches
-`git diff <brancha> <branchb> //shows changes introduced moving from a to b`
+#####View changes between branches `git diff <branch-a> <branch-b> //shows changes introduced moving from branch-a to branch-b`
 
-####List branches by "creator"
+#####List branches by "creator" `git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n | grep "<committer name>"`
 
-`git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n | grep "<committer name>"`
+#####Show from another branch `git show branch-1:path/file-name.js > ~/Desktop/foo.js`
 
-####Show from another branch
+#####Compare two branches `git diff --name-status <branch-a>..<branch-b>`
 
-`git show branch-1:path/file-name.js > ~/Desktop/foo.js`
+#####Difference between a single file on two branches `git diff master~20:<file-name> <file-name>`
 
-####Difference between a single file on two branches
+#####Filter by type of change `git diff --diff-filter=M branch-a..branch-b --name-status`
 
-`git diff master~20:pom.xml pom.xml`
-
-####Filter by type of change
-
-`git diff --diff-filter=M us78044-form-definition-in-search-results..2-merge-from-paul-2 --name-status`
-
-####Show all local branches
-`git branch`
+#####Show all local branches `git branch`
  
-####Switch to a branch
-`git checkout <branch name>`
+#####Switch to an existing local branch `git checkout <branch name>`
  
-####Create a new branch
-`git checkout -b <branch name>`
+#####Create a new branch `git checkout -b <branch name>`
  
-####Delete a branch
-`git branch -D <branch name>`
+#####Delete a local branch `git branch -D <branch name>`
  
-####Compare two branches
-`git diff --name-status <branch1>..<branch2>`
- 
-####Pull from another branch
-`git pull . master`
+#####Pull from another branch `git pull . master`
 
-####Switch back to the branch you were previously on
-`git checkout - ()`
+#####Switch back to the branch you were previously on `git checkout -`
 
-####Rename a branch
-`git branch -m <new-name-no-spaces>`
+#####Rename a branch `git branch -m <new-name-no-spaces>`
 
 ###Remotes
 
