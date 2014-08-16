@@ -80,6 +80,27 @@ reports
 
 `git diff --diff-filter=M us78044-form-definition-in-search-results..2-merge-from-paul-2 --name-status`
 
+####Show all local
+`git branch`
+ 
+####Switch to a branch
+`git checkout <branch name>`
+ 
+####Create a new branch
+`git checkout -b <branch name>`
+ 
+####Delete a branch
+`git branch -D <branch name>`
+ 
+####Compare two branches
+`git diff --name-status <branch1>..<branch2>`
+ 
+####Pull from another branch
+`git pull . master`
+
+####Rename a branch
+`git branch -m <new-name-no-spaces>`
+
 ###Remotes
 
 ####List remote branches
@@ -163,9 +184,11 @@ reports
 
 `git log --grep=C211676`
 
-**Find a commit by message:** `git log --grep <message-regex>`
+####Find a commit by message
+`git log --grep <message-regex>`
 
-**Revert To Commit:** `git reset --hard <SHA of commit>`
+####Revert To Commit
+`git reset --hard <SHA of commit>`
 
 ##Re-ordering commits
 
@@ -176,13 +199,17 @@ Interactively modify your commits: `git rebase -i <commit-sha-from-which-you-wan
 Most recent at the bottom of the commit list. Fix-up will squash the lower (i.e. later) commit into the higher (i.e. earlier commit). 
 
 
-**Find commit n commits ago:** `git reset --hard HEAD~n`
+####Rest to a commit n commits ago
+`git reset --hard HEAD~n`
  
-**View commits between dates:** `git log --name-status --since="17th August 2012" --until="18th August 2012" --author="Ben"`
+####View commits between dates**
+`git log --name-status --since="17th August 2012" --until="18th August 2012" --author="Ben"`
 
-**Show all changes in a commit:** `git show --name-status SHA`
+####Show all changes in a commit 
+`git show --name-status SHA`
 
-**Amend a commit:** `git commit --amend` (and then "i" to insert text, "ESC" to escape insertion mode, "wq" to write the message and quit the text editor)
+####Amend a commit
+`git commit --amend` //...and then "i" to insert text, "ESC" to escape insertion mode, "wq" to write the message and quit the text editor
 
 ####Reset a single file to a specific commi
 `git checkout <sha> file`
@@ -227,11 +254,13 @@ Show commits from *all* branches
 
 ###Tags
 
-####Tag
-
+####Create tag
 `git tag -a 0.0.2 -m "Tagging 0.0.2 <Ben>"`
 
 
+###Log
+
+View diffs in log: `git log -p`
 
 
 
@@ -277,7 +306,7 @@ Include a diff in your commit message: `git commit -v`
 
 View changes between branches: `git diff <brancha> <branchb>` (in this you will conveniently see the changes introduced by branch b)
 
-View diffs in log: `git log -p`
+
 
 Fetch brings all the objects from a  remote so that you are then up to date.
 
@@ -305,19 +334,7 @@ Find work that has been "lost": `git reflog --grep "Known commit message."`
 
 ##Branching
  
-**Show All:** `git branch`
- 
-**Change:** `git checkout <branch name>`
- 
-**New:** `git checkout -b <branch name>`
- 
-**Delete:** `git branch -D <branch name>`
- 
-**Difference:** `git diff --name-status <branch1>..<branch2>`
- 
-**Pull in from another:** `git pull . master`
 
-**Rename:** `git branch -m <new-name-no-spaces>`
 
 Configure GitK:
 
@@ -329,7 +346,7 @@ Update `.gitk` file.
 
 ##Moving through time & commits
  
-**Show changes over time:**  `git log`
+
 
 **Reset to last pulled version:** `git reset --hard tfs/default` 
 
@@ -374,7 +391,7 @@ Update `.gitk` file.
 
 **History search:** `CTRL+R` (then start typing the command)
 
-Git log, showing file diff: `git log -p <filename>`
+
 
 Keep index and stash: `git stash --keep-index`
 
@@ -394,6 +411,9 @@ View file at revision:
 
 `git show <revision>:./file/path.foo`
 
+**Show changes over time:**  `git log`
+
+Git log, showing file diff: `git log -p <filename>`
 Log at certain times: git log --name-status --since="17th AUgust 2012" --until="18th August 2012" --author="Ben"
 
 Differences between two branches `git diff --name-status master..branch`
