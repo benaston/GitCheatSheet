@@ -22,11 +22,8 @@ Git Cheat Sheet
 ###Configure Git like this
 
 `git config --global alias.st status &&` 
-
 `git config --global alias.br branch &&`
-
 `git config --global alias.ch checkout &&`
-
 `git config --global alias.co commit &&`
 
 `git config push.default current`
@@ -64,6 +61,9 @@ reports
 
 `git checkout -b test origin/test`
 
+####View changes between branches
+`git diff <brancha> <branchb> //shows changes introduced moving from a to b`
+
 ####List branches by "creator"
 
 `git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n | grep "Ben Aston"`
@@ -98,6 +98,9 @@ reports
 ####Pull from another branch
 `git pull . master`
 
+####Switch back to the branch you were previously on
+`git checkout - ()`
+
 ####Rename a branch
 `git branch -m <new-name-no-spaces>`
 
@@ -114,6 +117,10 @@ git push origin +alpha-0.3.0
 ####List remote branches
 
 `git branch -r`
+
+####Configure tracking information
+
+`git branch --track <local> <remote/branch>`
 
 ####Delete remote branch
 
@@ -150,6 +157,18 @@ git push origin +alpha-0.3.0
 
 `git pull  -r`
 
+####Reversion of a remote change
+
+ 1. reset your local index to the desired sha
+    `git reset --hard sha`
+
+ 2. move the branch pointer back to the HEAD immediately preceding the HEAD at the desired SHA
+ The 'soft' means that the changes made between the HEAD-1 and HEAD at the desired SHA
+ are left in place and are visible as 'new' changes
+    `git reset --soft HEAD@{1}`
+
+`git commit -m "Revert to sha"`
+
 ###The Index
 
 ####Remove untracked files and directories (WARNING this will remove files)
@@ -184,6 +203,9 @@ git push origin +alpha-0.3.0
 
 ###Commits
 
+###View author of changes within a file
+`git blame -c Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
+
 ####Show all files affected by commit
 
 `git diff 028343b..c252785 --name-status`
@@ -191,6 +213,9 @@ git push origin +alpha-0.3.0
 ####Find a commit with a commit message matching an expression
 
 `git log --grep=C211676`
+
+####View the modifications associated with a commit
+`git show bd61ad98`
 
 ####Find a commit by message
 `git log --grep <message-regex>`
@@ -208,6 +233,15 @@ e.g. `git rebase -i HEAD~6` (last six commits).
 ####Rest to a commit n commits ago
 `git reset --hard HEAD~n`
  
+####Show changes for a file in a commit
+`git show SHA <filename>`
+
+####Show file at a specific revision
+`git show SHA:<filename>`
+
+####Write a specific version to a file
+`git show SHA:<filename> > output-filename`
+
 ####View commits between dates**
 `git log --name-status --since="17th August 2012" --until="18th August 2012" --author="Ben"`
 
@@ -217,7 +251,7 @@ e.g. `git rebase -i HEAD~6` (last six commits).
 ####Amend a commit
 `git commit --amend` //...and then "i" to insert text, "ESC" to escape insertion mode, "wq" to write the message and quit the text editor
 
-####Reset a single file to a specific commi
+####Reset a single file to a specific commit
 `git checkout <sha> file`
 
 ####Show the log of commits for a single user
@@ -234,6 +268,9 @@ e.g. `git rebase -i HEAD~6` (last six commits).
 ####Show changes made in a single commit for a single file
 
 `git show <sha> <file>`
+
+####Diff between two versions
+`git diff 65d18cf7^1..65d18cf7 Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
 
 ####Create patch from last commit
 
@@ -264,9 +301,15 @@ e.g. `git rebase -i HEAD~6` (last six commits).
 
 ###Log
 
+####Graph changes over time
+`git log --graph --decorate --oneline --author="benaston" --since="11 Feb"`
+
 ####View diffs in log
 `git log -p` or;
 `git log -p <filename>`
+
+####Log for single file
+`git log --name-status <filename>`
 
 ####Show changes over time
 `git log`
@@ -280,8 +323,31 @@ e.g. `git rebase -i HEAD~6` (last six commits).
 ####Show the log around that sha
 `git log sha`
 
+##Stashing
+####Stash everything not added (good for web.config)
+`git stash --keep-index`
+
+####Stash your work
+`git stash`
+
+####Stash only some of your changes
+`git add <filenames-you-want>` `git stash --keep-index`
+
+####Un-stash your work
+`git stash apply`
+
+####Associate a message with a stash
+`git stash save "message associated with stash"`
 
 
+
+
+###Recovering from a major screw-up (lost work)
+
+####Find work that has been "lost"
+`git reflog --grep "Known commit message."`
+
+----
 
 
 This is how core.autocrlf appears to work currently (or at least since v1.7.2 from what I am aware):
@@ -311,20 +377,12 @@ Add to `.gitconfig`:
         path = C:\\Program Files\\TortoiseGit\\bin\\tortoisegitmerge.exe
    
 
-
-
-
-Create a file named `.gitignore` in the root of the project and populate it with patterns:
-
-`*.log`, for example.
-
 Include a diff in your commit message: `git commit -v`
 
-View changes between branches: `git diff <brancha> <branchb>` (in this you will conveniently see the changes introduced by branch b)
 
 
 
-Fetch brings all the objects from a  remote so that you are then up to date.
+Fetch brings all the objects from a remote so that you are then up to date.
 
 Merge combines changes into a branch.
 
@@ -340,9 +398,7 @@ e.g. `git branch --track <local> <remote/branch>`
 
 
 
-##Recovering from a major screw-up (lost work)
 
-Find work that has been "lost": `git reflog --grep "Known commit message."`
 
 ##Branching
  
@@ -354,7 +410,7 @@ Update `.gitk` file.
 
 ##Committing
 
-**Stash everything not added (good for web.config):** `git stash --keep-index`
+
 
 ##Moving through time & commits
  
@@ -364,11 +420,6 @@ Update `.gitk` file.
 
 **Reset to very latest in the remote TFS:**  `git-tfs fetch; git reset --hard tfs/default`
 
-**Stash your work:** `git stash`
-
-**Stash only some of your changes:** `git add <filenames-you-want>` `git stash --keep-index`
-
-**Un-stash your work:** `git stash apply`
 
 **View current work:** `git status`
 
@@ -376,13 +427,11 @@ Update `.gitk` file.
 
 **Fetch and merge in other people's commits:** `git-tfs pull`
 
-**Log for single file:** `git log --name-status <filename>`
 
-**Show changes for a file in a commit:** `git show SHA <filename>`
 
-**Show file at a specific revision:** `git show SHA:<filename>`
 
-**Write a specific version to a file:** `git show SHA:<filename> > output-filename`
+
+
 
 
 
@@ -411,9 +460,7 @@ Best git tutorial bar none: http://www.atlassian.com/git/tutorial/git-basics
 
 
 
-Diff between two versions: `git diff 65d18cf7^1..65d18cf7 Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
 
-Graph changes over time: `git log --graph --decorate --oneline --author="benaston" --since="11 Feb"`
 
 Find latest version of a deleted file: `git log --name-status --follow -p -- Src/DnR.Editorial.App/Controllers/LoggerController.cs`
 
@@ -423,7 +470,6 @@ View file at revision:
 
 `git show <revision>:./file/path.foo`
 
-
 Differences between two branches `git diff --name-status master..branch`
 
 for $doc in doc() return xdmp:document-delete(xdmp:node-uri($doc))
@@ -432,59 +478,17 @@ Undo `git add .`: `git reset`
 
 Grepping: `git log --grep='\[92\]'` - note the single quotes!
 
-Reversion of a remote change:
-
-The following git commands enable you revert a remote change...
-
-reset your local index to the desired sha
-`git reset --hard sha`
-
- move the branch pointer back to the HEAD immediately preceding the HEAD at the desired SHA
- The 'soft' means that the changes made between the HEAD-1 and HEAD at the desired SHA
- are left in place and are visible as 'new' changes
-`git reset --soft HEAD@{1}`
-
-`git commit -m "Revert to sha"`
-
-`git-tfs checkintool` (or whatever syntax you use for pushing to the remote)
-
-
-
-
 Reset single file to remote head git checkout tfs/default file-name
 
 Reset to remote head: git reset --hard origin/HEAD (using git-tfs: git reset --hard tfs/default)
 
-`git stash save "message associated with stash"`
 
-Yet another cheat sheet of git commands.
-
-Todo add basic log commands (with grep pipe), rebase commands for commit squashing (rebase -i HEAD^3, f).
-
-Information on working copy, index and remote.
-
-git commit --amend  to ammend the previous commit with the current added changes
-
-Nicer git blame: ` git blame -c Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
-
-
-
-git checkout - (switch back to the branch you were previously on)
-
-git commit --amend
-
-git checkout - (go to previous branch)
 
 git branch -m <branch name> <new branch name>
 
 View diff with remote for single file: `git diff remote/uri file`
 
-
-
-View the modifications associated with a sha: `git show bd61ad98`
-
 Show file at a revision: `git show HEAD~4:index.html` or `git show 67834b:index.html`
-
 
 `sudo service mongodb start`
 `sudo service mongodb stop`
