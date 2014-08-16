@@ -19,7 +19,7 @@ Git Cheat Sheet
                                                       others' work.
 
 
-###Configure Git
+###Configuration
 
 `git config --global alias.st status &&` 
 `git config --global alias.br branch &&`
@@ -50,10 +50,11 @@ reports
 .tmp
 ```
 
-####Check the current config
+#####Check the current config `git config --list` 
 
-`git config --list` 
-`git config <setting-name>` //check individual setting
+#####Check a single setting `git config <setting-name>`
+
+----
 
 ###Branches
 
@@ -85,9 +86,11 @@ reports
 
 #####Rename a branch `git branch -m <new-name-no-spaces>`
 
+----
+
 ###Remotes
 
-####Undo push
+#####Undo push
 
 ```
 git checkout alpha-0.3.0
@@ -95,17 +98,11 @@ git reset --hard cc4b63bebb6
 git push origin +alpha-0.3.0
 ```
 
-####List remote branches
+#####List remote branches `git branch -r`
 
-`git branch -r`
+#####Configure tracking information `git branch --track <local> <remote/branch>`
 
-####Configure tracking information
-
-`git branch --track <local> <remote/branch>`
-
-####Delete remote branch
-
-`git push origin :<branch-name>`
+#####Delete remote branch `git push origin :<branch-name>`
 
 ####Replay your new commits on top of everyone else's work
 `git fetch && git rebase master` (if you want to rebase against `master`)
