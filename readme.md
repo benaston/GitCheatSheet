@@ -57,9 +57,7 @@ reports
 
 ###Branches
 
-####Checkout remote branch and track
-
-`git checkout -b test origin/test`
+#####Checkout remote branch and track `git checkout -b test origin/test`
 
 ####View changes between branches
 `git diff <brancha> <branchb> //shows changes introduced moving from a to b`
