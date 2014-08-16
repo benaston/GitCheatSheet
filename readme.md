@@ -22,16 +22,36 @@ Git Cheat Sheet
 ###Configure Git like this
 
 `git config --global alias.st status &&` 
+
 `git config --global alias.br branch &&`
+
 `git config --global alias.ch checkout &&`
+
 `git config --global alias.co commit &&`
+
 `git config push.default current`
+
 `git config --global user.name "Ben Aston"`
+
 `git config --global user.email "ben@bj.ma"`
+
 `git config --global apply.whitespace nowarn`
+
 `git config core.autocrlf false`
+
 `git config --global merge.tool tortoisemerge` //optional
+
 `git config --global mergetool.tortoisemerge.cmd '"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe" -base:"$BASE" -theirs:"$REMOTE" -mine:"$LOCAL" -merged:"$MERGED"'`
+
+Create a file named `.gitignore` in the root of the project and populate it with:
+
+```
+.DS_Store
+.idea
+node_modules
+reports
+.tmp
+```
 
 ####Check the current config
 
@@ -139,6 +159,45 @@ Git Cheat Sheet
 
 `git diff 028343b..c252785 --name-status`
 
+####Find a commit with a commit message matching an expression
+
+`git log --grep=C211676`
+
+**Find a commit by message:** `git log --grep <message-regex>`
+
+**Revert To Commit:** `git reset --hard <SHA of commit>`
+
+##Re-ordering commits
+
+Re-play all your work not yet pushed onto the top of the remote: `git rebase master`
+
+Interactively modify your commits: `git rebase -i <commit-sha-from-which-you-want-to-rebase>` e.g. `git rebase -i HEAD~6` (last six commits).
+
+Most recent at the bottom of the commit list. Fix-up will squash the lower (i.e. later) commit into the higher (i.e. earlier commit). 
+
+
+**Find commit n commits ago:** `git reset --hard HEAD~n`
+ 
+**View commits between dates:** `git log --name-status --since="17th August 2012" --until="18th August 2012" --author="Ben"`
+
+**Show all changes in a commit:** `git show --name-status SHA`
+
+**Amend a commit:** `git commit --amend` (and then "i" to insert text, "ESC" to escape insertion mode, "wq" to write the message and quit the text editor)
+
+####Reset a single file to a specific commi
+`git checkout <sha> file`
+
+####Show the log of commits for a single user
+`git log --author="Jon"`
+
+####Show the history for a file, following renames
+`git log --follow -p file`
+
+####Show the changes associated with a commit
+`git show <sha>`
+
+####Diff a single file with index: git diff -- <file name> or git diff HEAD -- <file name>
+
 ####Show changes made in a single commit for a single file
 
 `git show <sha> <file>`
@@ -146,6 +205,10 @@ Git Cheat Sheet
 ####Create patch from last commit
 
 `git show HEAD > some-patch0001.patch`
+
+####File names changed between commits
+
+`git diff --name-only HEAD^1...HEAD`
 
 ####Create patch for specific commit
 
@@ -204,9 +267,7 @@ Add to `.gitconfig`:
    
 
 
-File names changed between commits:
 
-`git diff --name-only HEAD^1...HEAD`
 
 Create a file named `.gitignore` in the root of the project and populate it with patterns:
 
@@ -282,13 +343,7 @@ Update `.gitk` file.
 
 **View current work:** `git status`
 
-**Find a commit by message:** `git log --grep <message-regex>`
 
-**Revert To Commit:** `git reset --hard <SHA of commit>`
-
-**Find commit n commits ago:** `git reset --hard HEAD~n`
- 
-**View commits between dates:** `git log --name-status --since="17th August 2012" --until="18th August 2012" --author="Ben"`
 
 **Fetch and merge in other people's commits:** `git-tfs pull`
 
@@ -300,19 +355,12 @@ Update `.gitk` file.
 
 **Write a specific version to a file:** `git show SHA:<filename> > output-filename`
 
-**Show all changes in a commit:** `git show --name-status SHA`
 
-**Amend a commit:** `git commit --amend` (and then "i" to insert text, "ESC" to escape insertion mode, "wq" to write the message and quit the text editor)
+
+
 
 **Push:** `git-tfs checkintool -i default`
  
-##Re-ordering commits
-
-Re-play all your work not yet pushed onto the top of the remote: `git rebase master`
-
-Interactively modify your commits: `git rebase -i <commit-sha-from-which-you-want-to-rebase>` e.g. `git rebase -i HEAD~6` (last six commits).
-
-Most recent at the bottom of the commit list. Fix-up will squash the lower (i.e. later) commit into the higher (i.e. earlier commit). 
 
 ##Bash Shortcuts
  
@@ -373,17 +421,7 @@ reset your local index to the desired sha
 `git-tfs checkintool` (or whatever syntax you use for pushing to the remote)
 
 
-Find a commit with a commit message matching an expression: `git log --grep=C211676`
 
-Reset a single file to a specific commit: `git checkout <sha> file`
-
-Show the log of commits for a single user: `git log --author="Jon"`
-
-Show the history for a file, following renames: `git log --follow -p file`
-
-Show the changes associated with a commit: `git show <sha>`
-
-Diff a single file with index: git diff -- <file name> or git diff HEAD -- <file name>
 
 Reset single file to remote head git checkout tfs/default file-name
 
