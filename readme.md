@@ -19,7 +19,7 @@ Git Cheat Sheet
                                                       others' work.
 
 
-###Configure Git like this
+###Configure Git
 
 `git config --global alias.st status &&` 
 `git config --global alias.br branch &&`
