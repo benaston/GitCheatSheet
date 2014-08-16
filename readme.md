@@ -103,6 +103,14 @@ reports
 
 ###Remotes
 
+####Undo push
+
+```
+git checkout alpha-0.3.0
+git reset --hard cc4b63bebb6
+git push origin +alpha-0.3.0
+```
+
 ####List remote branches
 
 `git branch -r`
@@ -190,14 +198,12 @@ reports
 ####Revert To Commit
 `git reset --hard <SHA of commit>`
 
-##Re-ordering commits
+####Re-play all your work not yet pushed onto the top of the remote
+`git rebase master`
 
-Re-play all your work not yet pushed onto the top of the remote: `git rebase master`
-
-Interactively modify your commits: `git rebase -i <commit-sha-from-which-you-want-to-rebase>` e.g. `git rebase -i HEAD~6` (last six commits).
-
-Most recent at the bottom of the commit list. Fix-up will squash the lower (i.e. later) commit into the higher (i.e. earlier commit). 
-
+####Interactively modify your commits
+`git rebase -i <commit-sha-from-which-you-want-to-rebase>` //Most recent at the bottom of the commit list. Fix-up will
+e.g. `git rebase -i HEAD~6` (last six commits). 
 
 ####Rest to a commit n commits ago
 `git reset --hard HEAD~n`
@@ -241,15 +247,13 @@ Most recent at the bottom of the commit list. Fix-up will squash the lower (i.e.
 
 `git format-patch HEAD^ --stdout > patchfile.patch`
 
-Show commits from *all* branches
-
+####Show commits from *all* branches
 `git log --all` (plain git log just shows the commits leading up to the current HEAD)
 
 ####Change timestamp of commit
 `git commit --amend --date="Mon Feb 17 14:14:14 2014 +0000"`
 
 ####Change the author of a commit
-
 `git commit --amend --author "New Author Name <email@address.com>" `
 
 ###Tags
@@ -260,9 +264,21 @@ Show commits from *all* branches
 
 ###Log
 
-View diffs in log: `git log -p`
+####View diffs in log
+`git log -p` or;
+`git log -p <filename>`
 
+####Show changes over time
+`git log`
 
+####Log at certain times
+`git log --name-status --since="17th AUgust 2012" --until="18th August 2012" --author="Ben"`
+
+####Search log for a word
+`git log --name-status --grep Ben` or `git log --name-status | grep Ben -A 7 | less`
+
+####Show the log around that sha
+`git log sha`
 
 
 
@@ -322,11 +338,7 @@ e.g. `git branch --track <local> <remote/branch>`
 
 **Index is retained across branch switching.**
 
-Undo push:
 
-git checkout alpha-0.3.0
-git reset --hard cc4b63bebb6
-git push origin +alpha-0.3.0
 
 ##Recovering from a major screw-up (lost work)
 
@@ -397,7 +409,7 @@ Keep index and stash: `git stash --keep-index`
 
 Best git tutorial bar none: http://www.atlassian.com/git/tutorial/git-basics
 
-Nicer git blame: ` git blame -c Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
+
 
 Diff between two versions: `git diff 65d18cf7^1..65d18cf7 Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
 
@@ -411,10 +423,6 @@ View file at revision:
 
 `git show <revision>:./file/path.foo`
 
-**Show changes over time:**  `git log`
-
-Git log, showing file diff: `git log -p <filename>`
-Log at certain times: git log --name-status --since="17th AUgust 2012" --until="18th August 2012" --author="Ben"
 
 Differences between two branches `git diff --name-status master..branch`
 
@@ -457,7 +465,9 @@ Information on working copy, index and remote.
 
 git commit --amend  to ammend the previous commit with the current added changes
 
-git log sha - will show the log around that sha
+Nicer git blame: ` git blame -c Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
+
+
 
 git checkout - (switch back to the branch you were previously on)
 
@@ -469,7 +479,7 @@ git branch -m <branch name> <new branch name>
 
 View diff with remote for single file: `git diff remote/uri file`
 
-View the commits with a message containing a word: `git log --name-status --grep Ben` or `git log --name-status | grep Ben -A 7 | less`
+
 
 View the modifications associated with a sha: `git show bd61ad98`
 
