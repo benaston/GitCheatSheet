@@ -66,7 +66,7 @@ reports
 
 ####List branches by "creator"
 
-`git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n | grep "Ben Aston"`
+`git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n | grep "<committer name>"`
 
 ####Show from another branch
 
@@ -338,9 +338,6 @@ e.g. `git rebase -i HEAD~6` (last six commits).
 
 ####Associate a message with a stash
 `git stash save "message associated with stash"`
-
-
-
 
 ###Recovering from a major screw-up (lost work)
 
