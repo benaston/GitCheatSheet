@@ -9,9 +9,42 @@ Git Cheat Sheet
 
 `git config --global alias.st status &&` 
 `git config --global alias.br branch &&`
-`git config --global alias.co checkout`
+`git config --global alias.ch checkout &&`
+`git config --global alias.co commit &&`
+
+##Configure
+
+`git config push.default current`
+
+`git config --global user.name "Ben Aston"`
+
+`git config --global user.email "ben@bj.ma"`
+
+####Do not warn about whitespace changes, useful for languages where whitespace does not matter
+
+`git config --global apply.whitespace nowarn`
+
+####Check the current config
+
+`git config --list` 
 
 ###Branches
+
+####Checkout remote branch and track
+
+`git checkout -b test origin/test`
+
+####List branches by "creator"
+
+`git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n | grep "Ben Aston"`
+
+####Difference between a single file on two branches
+
+`git diff master~20:pom.xml pom.xml`
+
+####Filter by type of change
+
+`git diff --diff-filter=M us78044-form-definition-in-search-results..2-merge-from-paul-2 --name-status`
 
 ####List remote branches
 
@@ -29,6 +62,22 @@ Git Cheat Sheet
 ####Set remote URL
 
 `git remote set-url heroku git@heroku.com:intense-dusk-2508.git`
+
+####Delete remote branch
+
+`git push origin :<branch-name>`
+
+####View tracking information
+
+`git branch -vv`
+
+####Bring yourself up to date with another branch in a clean way
+
+`git rebase <branch-name-to-pull-from>`.
+
+####Undo a merge use
+
+`git reset --hard`
 
 ####Create remote branch
 
@@ -105,15 +154,7 @@ Show commits from *all* branches
 
 
 
-Checkout remote branch and track:
 
-`git checkout -b test origin/test`
-
-List branches by "creator": `git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n | grep "Ben Aston"`
-
-Difference between a single file on two branches:  `git diff master~20:pom.xml pom.xml`
-
-Filter by type of change: `git diff --diff-filter=M us78044-form-definition-in-search-results..2-merge-from-paul-2 --name-status`
 
 Show all files affected by merge including those fast forwarded: git diff 028343b..c252785 --name-status
 Show from another branch: `git show branch-1:path/file-name.js > ~/Desktop/foo.js`
@@ -161,26 +202,7 @@ Add to `.gitconfig`:
                                                       You push & pull here
                                                       to integrate with
                                                       others' work.
-##Configure
 
-`git config push.default current`
-
-`git push origin feature/US72097-Mdmt-Provisioning`
-
-`git config --global user.name "Ben Aston"`
-
-`git config --global user.email "ben@bj.ma"`
-
-`git config --global apply.whitespace nowarn` //do not warn about whitespace changes, useful for languages where whitespace does not matter
-
-`git config --list` //check the current config
-
-`git config --global alias.co checkout`
-`git config --global alias.pl pull`
-`git config --global alias.ps push`
-`git config --global alias.co commit`
-
-`git config --global alias.co checkout` //alias checkout
 
 File names changed between commits:
 
@@ -194,15 +216,7 @@ Include a diff in your commit message: `git commit -v`
 
 View changes between branches: `git diff <brancha> <branchb>` (in this you will conveniently see the changes introduced by branch b)
 
-Delete remote branch: `git push origin :<branch-name>`
-
 View diffs in log: `git log -p`
-
-View tracking information: `git branch -vv   # doubly verbose!`
-
-Bring yourself up to date with another branch in a clean way: `git rebase <branch-name-to-pull-from>`.
-
-Undo a merge: use git reset --hard.
 
 Fetch brings all the objects from a  remote so that you are then up to date.
 
