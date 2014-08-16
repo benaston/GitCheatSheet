@@ -80,7 +80,7 @@ reports
 
 `git diff --diff-filter=M us78044-form-definition-in-search-results..2-merge-from-paul-2 --name-status`
 
-####Show all local
+####Show all local branches
 `git branch`
  
 ####Switch to a branch
