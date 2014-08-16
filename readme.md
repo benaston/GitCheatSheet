@@ -3,30 +3,40 @@ Git Cheat Sheet
 
 ##Git
 
-###Local Configuration
+###Overview
 
-####Set alias
+    working directory -> index -> local repository -> remote repository (e.g. origin server)
+           ^               ^              ^                    ^   
+           |               |              |                    |
+    You do your work here. |              |___                 |
+ 					                     |                  |                | 
+              You prepare your commits here.  |                |
+                                              |                |
+                                        You commit here.       |    
+                                                               |
+                                                      You push & pull here
+                                                      to integrate with
+                                                      others' work.
+
+
+###Configure Git like this
 
 `git config --global alias.st status &&` 
 `git config --global alias.br branch &&`
 `git config --global alias.ch checkout &&`
 `git config --global alias.co commit &&`
-
-##Configure
-
 `git config push.default current`
-
 `git config --global user.name "Ben Aston"`
-
 `git config --global user.email "ben@bj.ma"`
-
-####Do not warn about whitespace changes, useful for languages where whitespace does not matter
-
 `git config --global apply.whitespace nowarn`
+`git config core.autocrlf false`
+`git config --global merge.tool tortoisemerge` //optional
+`git config --global mergetool.tortoisemerge.cmd '"C:/Program Files/TortoiseGit/bin/TortoiseGitMerge.exe" -base:"$BASE" -theirs:"$REMOTE" -mine:"$LOCAL" -merged:"$MERGED"'`
 
 ####Check the current config
 
 `git config --list` 
+`git config <setting-name>` //check individual setting
 
 ###Branches
 
@@ -38,6 +48,10 @@ Git Cheat Sheet
 
 `git for-each-ref --format='%(committerdate) %09 %(authorname) %09 %(refname)' | sort -k5n -k2M -k3n -k4n | grep "Ben Aston"`
 
+####Show from another branch
+
+`git show branch-1:path/file-name.js > ~/Desktop/foo.js`
+
 ####Difference between a single file on two branches
 
 `git diff master~20:pom.xml pom.xml`
@@ -46,11 +60,15 @@ Git Cheat Sheet
 
 `git diff --diff-filter=M us78044-form-definition-in-search-results..2-merge-from-paul-2 --name-status`
 
+###Remotes
+
 ####List remote branches
 
 `git branch -r`
 
-###Remotes
+####Delete remote branch
+
+`git push origin :<branch-name>`
 
 ####Replay your new commits on top of everyone else's work
 `git fetch && git rebase master` (if you want to rebase against `master`)
@@ -62,10 +80,6 @@ Git Cheat Sheet
 ####Set remote URL
 
 `git remote set-url heroku git@heroku.com:intense-dusk-2508.git`
-
-####Delete remote branch
-
-`git push origin :<branch-name>`
 
 ####View tracking information
 
@@ -90,7 +104,7 @@ Git Cheat Sheet
 ###The Index
 
 ####Remove untracked files and directories (WARNING this will remove files)
-`git clean -df`. (`-n` does a dry run)
+`git clean -df` (`-n` does a dry run)
 
 ####Delete a file
 `git rm <file>`
@@ -101,7 +115,7 @@ Git Cheat Sheet
 
 ####Un-add a file
 
-`git reset <filename>`.
+`git reset <filename>`
 
 ####Un-add everything staged
 
@@ -117,9 +131,13 @@ Git Cheat Sheet
 
 ####Pull a single commit
 
-`git cherry-pick <sha>`, `git mergetool`, `git cherry-pick --continue`.
+`git cherry-pick <sha>`, `git mergetool`, `git cherry-pick --continue`
 
 ###Commits
+
+####Show all files affected by commit
+
+`git diff 028343b..c252785 --name-status`
 
 ####Show changes made in a single commit for a single file
 
@@ -156,11 +174,7 @@ Show commits from *all* branches
 
 
 
-Show all files affected by merge including those fast forwarded: git diff 028343b..c252785 --name-status
-Show from another branch: `git show branch-1:path/file-name.js > ~/Desktop/foo.js`
-Configure line endings: ` git config core.autocrlf false` (or use input) (see below for explanation).
 
-View current setting:  `git config core.autocrlf`
 
 This is how core.autocrlf appears to work currently (or at least since v1.7.2 from what I am aware):
 
@@ -188,20 +202,6 @@ Add to `.gitconfig`:
     [mergetool "tortoisemerge"]
         path = C:\\Program Files\\TortoiseGit\\bin\\tortoisegitmerge.exe
    
-##Overview
-
-    working directory -> index -> local repository -> remote repository (e.g. origin server)
-           ^               ^              ^                    ^   
-           |               |              |                    |
-    You do your work here. |              |___                 |
- 					       |                  |                |
-              You prepare your commits here.  |                |
-                                              |                |
-                                        You commit here.       |    
-                                                               |
-                                                      You push & pull here
-                                                      to integrate with
-                                                      others' work.
 
 
 File names changed between commits:
