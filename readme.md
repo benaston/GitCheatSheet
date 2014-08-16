@@ -100,6 +100,8 @@ git push origin +alpha-0.3.0
 
 #####List remote branches `git branch -r`
 
+#####Reset to remote HEAD `git reset --hard origin <branch-name>`
+
 #####Configure tracking information `git branch --track <local> <remote/branch>`
 
 #####Delete remote branch `git push origin :<branch-name>`
