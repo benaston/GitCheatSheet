@@ -1,13 +1,28 @@
 Git Cheat Sheet
 ====
 
-List remote branches: `git branch -r`
-
-##VI
-
-`/` to start search.
-
 ##Git
+
+###Branches
+
+####List remote branches
+
+`git branch -r`
+
+###Remotes
+
+####Remove remote
+
+`git remote rm <remote-name>`
+
+####Pull via rebase
+
+`git pull  -r`
+
+###The Index
+
+
+###Cherry Picking
 
 ####Cherry pick from another repo
 
@@ -15,9 +30,13 @@ List remote branches: `git branch -r`
  1. `git fetch my-repo-to-pull-from`
  1. `git cherry-pick <sha-in-the-repo-to-pull-from>`
 
+###Commits
+
 ####Change the author of a commit
 
 `git commit --amend --author "New Author Name <email@address.com>" `
+
+###Tags
 
 ####Tag
 
@@ -31,14 +50,11 @@ List remote branches: `git branch -r`
 
 `git reset` or `git rm -r --cached .` (note the dot).
 
-####Remvoe remote
-`git remote rm <remote-name>`
 
-####Pull via rebase
-`git pull  -r`
 
-####Show staged changes (i.e. changes in the index)
-`git diff --cached`
+
+
+
 
 ####Create remote branch
 `git checkout -b foo && git push origin foo` (pushing creates the branch)
@@ -378,3 +394,8 @@ View the commits with a message containing a word: `git log --name-status --grep
 View the modifications associated with a sha: `git show bd61ad98`
 
 Show file at a revision: `git show HEAD~4:index.html` or `git show 67834b:index.html`
+
+
+##VI
+
+`/` to start search.
