@@ -3,6 +3,14 @@ Git Cheat Sheet
 
 ##Git
 
+###Local Configuration
+
+####Set alias
+
+`git config --global alias.st status &&` 
+`git config --global alias.br branch &&`
+`git config --global alias.co checkout`
+
 ###Branches
 
 ####List remote branches
@@ -11,9 +19,20 @@ Git Cheat Sheet
 
 ###Remotes
 
+####Replay your new commits on top of everyone else's work
+`git fetch && git rebase master` (if you want to rebase against `master`)
+
 ####Remove remote
 
 `git remote rm <remote-name>`
+
+####Set remote URL
+
+`git remote set-url heroku git@heroku.com:intense-dusk-2508.git`
+
+####Create remote branch
+
+`git checkout -b foo && git push origin foo` (pushing creates the branch)
 
 ####Pull via rebase
 
@@ -21,6 +40,23 @@ Git Cheat Sheet
 
 ###The Index
 
+####Remove untracked files and directories (WARNING this will remove files)
+`git clean -df`. (`-n` does a dry run)
+
+####Delete a file
+`git rm <file>`
+
+####Show staged changes (i.e. changes in the index)
+
+`git diff --cached`
+
+####Un-add a file
+
+`git reset <filename>`.
+
+####Un-add everything staged
+
+`git reset` or `git rm -r --cached .` (note the dot).
 
 ###Cherry Picking
 
@@ -30,7 +66,30 @@ Git Cheat Sheet
  1. `git fetch my-repo-to-pull-from`
  1. `git cherry-pick <sha-in-the-repo-to-pull-from>`
 
+####Pull a single commit
+
+`git cherry-pick <sha>`, `git mergetool`, `git cherry-pick --continue`.
+
 ###Commits
+
+####Show changes made in a single commit for a single file
+
+`git show <sha> <file>`
+
+####Create patch from last commit
+
+`git show HEAD > some-patch0001.patch`
+
+####Create patch for specific commit
+
+`git format-patch HEAD^ --stdout > patchfile.patch`
+
+Show commits from *all* branches
+
+`git log --all` (plain git log just shows the commits leading up to the current HEAD)
+
+####Change timestamp of commit
+`git commit --amend --date="Mon Feb 17 14:14:14 2014 +0000"`
 
 ####Change the author of a commit
 
@@ -42,60 +101,9 @@ Git Cheat Sheet
 
 `git tag -a 0.0.2 -m "Tagging 0.0.2 <Ben>"`
 
-####Un-add a file
-
-`git reset <filename>`.
-
-####Un-add everything staged
-
-`git reset` or `git rm -r --cached .` (note the dot).
 
 
 
-
-
-
-
-####Create remote branch
-`git checkout -b foo && git push origin foo` (pushing creates the branch)
-
-####Set alias
-`git config --global alias.st status &&` 
-`git config --global alias.br branch &&`
-`git config --global alias.co checkout`
-
-####Set remote URL
-`git remote set-url heroku git@heroku.com:intense-dusk-2508.git`
-
-####Create patch from last commit
-`git show HEAD > some-patch0001.patch`
-
-####Create patch for specific commit
-`git format-patch HEAD^ --stdout > patchfile.patch`
-
-####Change timestamp of commit
-`git commit --amend --date="Mon Feb 17 14:14:14 2014 +0000"`
-
-####Remove untracked files and directories (WARNING this will remove files)
-`git clean -df`. (`-n` does a dry run)
-
-####Delete a file
-`git rm <file>`
-
-####Pull a single commit
-`git cherry-pick <sha>`, `git mergetool`, `git cherry-pick --continue`.
-
-
-####Replay your new commits on top of everyone elses work
-`git fetch && git rebase master` (if you want to rebase against `master`)
-
-####Show changes made in a single commit for a single file
-`git show <sha> <file>`
-
-Show commits from *all* branches: `git log --all` (plain git log just shows the commits leading up to the current HEAD)
-
-`sudo service mongodb start`
-`sudo service mongodb stop`
 
 Checkout remote branch and track:
 
@@ -395,6 +403,9 @@ View the modifications associated with a sha: `git show bd61ad98`
 
 Show file at a revision: `git show HEAD~4:index.html` or `git show 67834b:index.html`
 
+
+`sudo service mongodb start`
+`sudo service mongodb stop`
 
 ##VI
 
