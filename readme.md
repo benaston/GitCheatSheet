@@ -109,35 +109,21 @@ git push origin +alpha-0.3.0
 ####Replay your new commits on top of everyone else's work
 `git fetch && git rebase master` (if you want to rebase against `master`)
 
-####Remove remote
+#####Remove remote `git remote rm <remote-name>`
 
-`git remote rm <remote-name>`
+#####Set remote URL `git remote set-url heroku git@heroku.com:intense-dusk-2508.git`
 
-####Set remote URL
+#####View tracking information `git branch -vv`
 
-`git remote set-url heroku git@heroku.com:intense-dusk-2508.git`
+#####Bring yourself up to date with another branch in a clean way `git rebase <branch-name-to-pull-from>`.
 
-####View tracking information
+#####Undo a merge use `git reset --hard`
 
-`git branch -vv`
+#####Create remote branch `git checkout -b foo && git push origin foo` (pushing creates the branch)
 
-####Bring yourself up to date with another branch in a clean way
+#####Pull via rebase `git pull  -r`
 
-`git rebase <branch-name-to-pull-from>`.
-
-####Undo a merge use
-
-`git reset --hard`
-
-####Create remote branch
-
-`git checkout -b foo && git push origin foo` (pushing creates the branch)
-
-####Pull via rebase
-
-`git pull  -r`
-
-####Reversion of a remote change
+#####Reversion of a remote change
 
  1. reset your local index to the desired sha
     `git reset --hard sha`
@@ -149,132 +135,94 @@ git push origin +alpha-0.3.0
 
 `git commit -m "Revert to sha"`
 
+----
+
 ###The Index
 
-####Remove untracked files and directories (WARNING this will remove files)
-`git clean -df` (`-n` does a dry run)
+#####Remove untracked files and directories (WARNING this will remove files) `git clean -df` (`-n` does a dry run)
 
-####Delete a file
-`git rm <file>`
+#####Delete a file `git rm <file>`
 
-####Show staged changes (i.e. changes in the index)
+#####Show staged changes (i.e. changes in the index) `git diff --cached`
 
-`git diff --cached`
+#####Un-add a file `git reset <filename>`
 
-####Un-add a file
+#####Un-add everything staged `git reset` or `git rm -r --cached .` (note the dot).
 
-`git reset <filename>`
-
-####Un-add everything staged
-
-`git reset` or `git rm -r --cached .` (note the dot).
+----
 
 ###Cherry Picking
 
-####Cherry pick from another repo
+#####Cherry pick from another repo
 
  1. `git remote add my-repo-to-pull-from /c/my-location/my-repo-to-pull-from/.git`
  1. `git fetch my-repo-to-pull-from`
  1. `git cherry-pick <sha-in-the-repo-to-pull-from>`
 
-####Pull a single commit
+#####Pull a single commit `git cherry-pick <sha>`, `git mergetool`, `git cherry-pick --continue`
 
-`git cherry-pick <sha>`, `git mergetool`, `git cherry-pick --continue`
+----
 
 ###Commits
 
-###View author of changes within a file
-`git blame -c Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
+#####View author of changes within a file `git blame -c Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
 
-####Show all files affected by commit
+#####Show all files affected by commit `git diff 028343b..c252785 --name-status`
 
-`git diff 028343b..c252785 --name-status`
+#####Find a commit with a commit message matching an expression `git log --grep=C211676`
 
-####Find a commit with a commit message matching an expression
+#####View the modifications associated with a commit `git show <sha>`
 
-`git log --grep=C211676`
+#####Find a commit by message `git log --grep <message-regex>`
 
-####View the modifications associated with a commit
-`git show bd61ad98`
+#####Revert To Commit `git reset --hard <SHA of commit>`
 
-####Find a commit by message
-`git log --grep <message-regex>`
+#####Re-play all your work not yet pushed onto the top of the remote `git rebase master`
 
-####Revert To Commit
-`git reset --hard <SHA of commit>`
-
-####Re-play all your work not yet pushed onto the top of the remote
-`git rebase master`
-
-####Interactively modify your commits
-`git rebase -i <commit-sha-from-which-you-want-to-rebase>` //Most recent at the bottom of the commit list. Fix-up will
+#####Interactively modify your commits `git rebase -i <commit-sha-from-which-you-want-to-rebase>` //Most recent at the bottom of the commit list. Fix-up will
 e.g. `git rebase -i HEAD~6` (last six commits). 
 
-####Rest to a commit n commits ago
-`git reset --hard HEAD~n`
+#####Reset to a commit n commits ago `git reset --hard HEAD~n`
  
-####Show changes for a file in a commit
-`git show SHA <filename>`
+#####Show changes for a file in a commit `git show SHA <filename>`
 
-####Show file at a specific revision
-`git show SHA:<filename>`
+#####Show file at a specific revision `git show SHA:<filename>`
 
-####Include a diff in your commit message
-`git commit -v`
+#####Include a diff in your commit message `git commit -v`
 
-####Write a specific version to a file
-`git show SHA:<filename> > output-filename`
+#####Write a specific version to a file `git show SHA:<filename> > output-filename`
 
-####View commits between dates**
-`git log --name-status --since="17th August 2012" --until="18th August 2012" --author="Ben"`
+#####View commits between dates `git log --name-status --since="17th August 2012" --until="18th August 2012" --author="Ben"`
 
-####Show all changes in a commit 
-`git show --name-status SHA`
+#####Show all changes in a commit `git show --name-status SHA`
 
-####Amend a commit
-`git commit --amend` //...and then "i" to insert text, "ESC" to escape insertion mode, "wq" to write the message and quit the text editor
+#####Amend a commit `git commit --amend` //...and then "i" to insert text, "ESC" to escape insertion mode, "wq" to write the message and quit the text editor
 
-####Reset a single file to a specific commit
-`git checkout <sha> file`
+#####Reset a single file to a specific commit `git checkout <sha> file`
 
-####Show the log of commits for a single user
-`git log --author="Jon"`
+#####Show the log of commits for a single user `git log --author="Jon"`
 
-####Show the history for a file, following renames
-`git log --follow -p file`
+#####Show the history for a file, following renames `git log --follow -p file`
 
-####Show the changes associated with a commit
-`git show <sha>`
+#####Show the changes associated with a commit `git show <sha>`
 
-####Diff a single file with index: git diff -- <file name> or git diff HEAD -- <file name>
+####Diff a single file with index: `git diff -- <file name> or git diff HEAD -- <file name>`
 
-####Show changes made in a single commit for a single file
+#####Show changes made in a single commit for a single file `git show <sha> <file>`
 
-`git show <sha> <file>`
+#####Diff between two versions `git diff 65d18cf7^1..65d18cf7 <filename>`
 
-####Diff between two versions
-`git diff 65d18cf7^1..65d18cf7 Src/Editorial.Core/Queries/InsertReportIssueQuery.cs`
+#####Create patch from last commit `git show HEAD > some-patch0001.patch`
 
-####Create patch from last commit
+#####File names changed between commits `git diff --name-only HEAD^1...HEAD`
 
-`git show HEAD > some-patch0001.patch`
+#####Create patch for specific commit `git format-patch HEAD^ --stdout > patchfile.patch`
 
-####File names changed between commits
+####Show commits from *all* branches `git log --all` (plain git log just shows the commits leading up to the current HEAD)
 
-`git diff --name-only HEAD^1...HEAD`
+####Change timestamp of commit `git commit --amend --date="Mon Feb 17 14:14:14 2014 +0000"`
 
-####Create patch for specific commit
-
-`git format-patch HEAD^ --stdout > patchfile.patch`
-
-####Show commits from *all* branches
-`git log --all` (plain git log just shows the commits leading up to the current HEAD)
-
-####Change timestamp of commit
-`git commit --amend --date="Mon Feb 17 14:14:14 2014 +0000"`
-
-####Change the author of a commit
-`git commit --amend --author "New Author Name <email@address.com>" `
+####Change the author of a commit `git commit --amend --author "New Author Name <email@address.com>" `
 
 ###Tags
 
