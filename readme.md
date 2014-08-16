@@ -239,6 +239,9 @@ e.g. `git rebase -i HEAD~6` (last six commits).
 ####Show file at a specific revision
 `git show SHA:<filename>`
 
+####Include a diff in your commit message
+`git commit -v`
+
 ####Write a specific version to a file
 `git show SHA:<filename> > output-filename`
 
@@ -373,12 +376,6 @@ Add to `.gitconfig`:
     [mergetool "tortoisemerge"]
         path = C:\\Program Files\\TortoiseGit\\bin\\tortoisegitmerge.exe
    
-
-Include a diff in your commit message: `git commit -v`
-
-
-
-
 Fetch brings all the objects from a remote so that you are then up to date.
 
 Merge combines changes into a branch.
@@ -397,42 +394,16 @@ e.g. `git branch --track <local> <remote/branch>`
 
 
 
-##Branching
- 
 
-
-Configure GitK:
-
-Update `.gitk` file.
-
-##Committing
-
-
-
-##Moving through time & commits
- 
 
 
 **Reset to last pulled version:** `git reset --hard tfs/default` 
 
 **Reset to very latest in the remote TFS:**  `git-tfs fetch; git reset --hard tfs/default`
 
-
 **View current work:** `git status`
 
-
-
 **Fetch and merge in other people's commits:** `git-tfs pull`
-
-
-
-
-
-
-
-
-
-
 
 **Push:** `git-tfs checkintool -i default`
  
