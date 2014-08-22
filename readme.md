@@ -92,11 +92,17 @@ reports
 
 #####Undo push
 
+In general, you don't bother with this because it destroys the tree.
+
 ```
 git checkout alpha-0.3.0
 git reset --hard cc4b63bebb6
 git push origin +alpha-0.3.0
 ```
+
+Instead you should use `revert`:
+
+```git revert -m 1 <sha>```
 
 #####List remote branches `git branch -r`
 
@@ -224,11 +230,14 @@ e.g. `git rebase -i HEAD~6` (last six commits).
 
 ####Change the author of a commit `git commit --amend --author "New Author Name <email@address.com>" `
 
+----
+
 ###Tags
 
 ####Create tag
 `git tag -a 0.0.2 -m "Tagging 0.0.2 <Ben>"`
 
+----
 
 ###Log
 
