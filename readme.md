@@ -56,6 +56,12 @@ reports
 
 ----
 
+###Merging
+
+`git checkout --ours / --theirs <filename>`
+
+----
+
 ###Branches
 
 #####Checkout remote branch and track `git checkout -b test origin/test`
