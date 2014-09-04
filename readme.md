@@ -195,6 +195,8 @@ Instead you should use `revert`:
 
 #####Find a commit with a commit message matching an expression `git log --grep=C211676`
 
+#####Reverse log from a commit `git log --reverse --ancestry-path <sha>^..master` (reset to HEAD first)
+
 #####View the modifications associated with a commit `git show <sha>`
 
 #####Find a commit by message `git log --grep <message-regex>`
