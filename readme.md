@@ -56,6 +56,14 @@ reports
 
 ----
 
+###Bisect
+
+`git bisect start`
+`git bisect bad                 # Current version is bad`
+`$ git bisect good v2.6.13-rc2 `
+
+----
+
 ###Merging
 
 `git checkout --ours / --theirs <filename>`
