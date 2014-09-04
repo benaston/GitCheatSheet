@@ -155,6 +155,10 @@ Instead you should use `revert`:
 
 `git commit -m "Revert to sha"`
 
+#####Reset file to specific SHA
+
+`git checkout abcde file/to/restore`
+
 ----
 
 ###The Index
