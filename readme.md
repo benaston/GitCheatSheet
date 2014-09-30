@@ -72,7 +72,7 @@ reports
 
 ###Branches
 
-#####Checkout remote branch and track `git checkout -b test origin/test`
+#####Checkout remote branch and track `git checkout -b test origin/test`  git ch blotter-integration-spike
 
 #####View changes between branches `git diff <branch-a> <branch-b> //shows changes introduced moving from branch-a to branch-b`
 
