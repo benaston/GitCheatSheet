@@ -19,6 +19,7 @@ Git Cheat Sheet
                                                       others' work.
 
 
+Cofiguree a tracking branch. track a remote: git branch -u upstream/foo
 ###Configuration
 
 `git config --global alias.st status &&` 
