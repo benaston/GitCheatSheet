@@ -3,6 +3,8 @@ Git Cheat Sheet
 
 ##Git
 
+alias g='grunt'
+
 ###Overview
 
     working directory -> index -> local repository -> remote repository (e.g. origin server)
