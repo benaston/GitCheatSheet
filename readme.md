@@ -21,6 +21,8 @@ alias g='grunt'
                                                       others' work.
 
 
+Show tags: `git log --tags --decorate=full`
+
 Cofiguree a tracking branch. track a remote: git branch -u upstream/foo
 ###Configuration
 
