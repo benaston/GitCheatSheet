@@ -1,6 +1,23 @@
 Git Cheat Sheet
 ====
 
+
+.bashrc for windows:
+
+GetBranch()
+{
+    cat /c/dev/evolve/.git/HEAD | sed 's+^ref: refs/heads/++'
+    }
+    export PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[36m\]\$(GetBranch) \[\e[33m\]\w \[\e[0m\] \n\$ (use go):"
+    alias go="cd /c/dev/evolve/execution-app"
+    alias g="git"
+    alias gt="grunt test"
+    alias gtc="grunt tc"
+    cd /c/dev/evolve/execution-app
+~
+~
+~
+
 ##Git
 
 alias g='grunt'
