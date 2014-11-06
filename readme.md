@@ -21,6 +21,9 @@ alias g='grunt'
                                                       others' work.
 
 
+Configure bash prompt: echo $PS1
+PS1="my new prompt"
+
 Show tags: `git log --tags --decorate=full`
 
 Count lines: `git branch -r | wc -l `
