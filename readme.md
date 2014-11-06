@@ -23,6 +23,8 @@ alias g='grunt'
 
 Show tags: `git log --tags --decorate=full`
 
+Count lines: `git branch -r | wc -l `
+
 Git show a merge: git log, notice the commit message, invert the shas and git diff a..b
 
 Cofiguree a tracking branch. track a remote: git branch -u upstream/foo
