@@ -41,6 +41,23 @@ alias g='grunt'
 Configure bash prompt: echo $PS1
 PS1="my new prompt"
 
+.bashrc
+
+GetBranch()
+{
+  cat /c/dev/evolve/.git/HEAD | sed 's+^ref: refs/heads/++'
+}
+    export PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[36m\]\$(GetBranch) \[\e[33m\]\w \[\e[0m\] \n\$ [go|g|b|gt|gtc]:"
+    alias go="cd /c/dev/evolve/execution-app"
+    alias g="git"
+    alias gt="grunt test"
+    alias gtc="grunt tc"
+    alias b="start bash"
+    alias tce="start chrome http://teamcity.it.hk.hibm.hsbc/project.html?projectId=Evolve_ExecutionApp"
+    alias tcs="start chrome http://teamcity.it.hk.hibm.hsbc/project.html?projectId=Evolve_EvolveHtmlGui"
+    cd /c/dev/evolve/execution-app
+
+
 Show tags: `git log --tags --decorate=full`
 
 Count lines: `git branch -r | wc -l `
@@ -54,8 +71,10 @@ Cofiguree a tracking branch. track a remote: git branch -u upstream/foo
 `git config --global alias.br branch &&`
 `git config --global alias.ch checkout &&`
 `git config --global alias.co commit &&`
-
+`git config --global alias.ad add`
+`git config --global alias.pu pull`
 `git config push.default current`
+
 
 `git config --global user.name "Ben Aston"`
 
