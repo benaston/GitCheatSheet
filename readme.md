@@ -4,19 +4,25 @@ Git Cheat Sheet
 
 .bashrc for windows:
 
-GetBranch()
-{
-    cat /c/dev/evolve/.git/HEAD | sed 's+^ref: refs/heads/++'
-    }
-    export PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[36m\]\$(GetBranch) \[\e[33m\]\w \[\e[0m\] \n\$ (use go):"
-    alias go="cd /c/dev/evolve/execution-app"
-    alias g="git"
-    alias gt="grunt test"
-    alias gtc="grunt tc"
-    cd /c/dev/evolve/execution-app
-~
-~
-~
+        GetBranch()
+        {
+          cat /c/dev/evolve/.git/HEAD | sed 's+^ref: refs/heads/++'
+        }
+            export PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[36m\]\$(GetBranch) \[\e[33m\]\w \[\e[0m\] \n\$ [go|b|g|gr|gt|gtc|tce|tcs|lo|sit|sta]:"
+            alias go="cd /c/dev/evolve/execution-app"
+            alias g="git"
+            alias gt="grunt test"
+            alias gs="grunt server"
+            alias gr="grunt"
+            alias gtc="grunt tc"
+            alias b="start bash"
+            alias tce="start chrome http://teamcity.it.hk.hibm.hsbc/project.html?projectId=Evolve_ExecutionApp"
+            alias tcs="start chrome http://teamcity.it.hk.hibm.hsbc/project.html?projectId=Evolve_EvolveHtmlGui"
+            alias lo="start chrome http://localhost:23100/components/rig/"
+            alias sit="start chrome https://sit-fxsalesui.uk.hsbc/evolve/"
+            alias sta="start chrome http://hkl100311.hk.hsbc/stash/projects/EVOLVE/repos/evolve/browse"
+            cd /c/dev/evolve/execution-app
+
 
 ##Git
 
