@@ -1,6 +1,12 @@
 Git Cheat Sheet
 ====
 
+##Less
+
+End of file: `shift+g`
+Previous page: `b`
+Next page: `spacebar`
+
 
 .bashrc for windows:
 
