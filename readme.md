@@ -6,6 +6,8 @@ Git Cheat Sheet
 End of file: `shift+g`
 Previous page: `b`
 Next page: `spacebar`
+Next line: `j`
+Previous line: `k`
 
 
 .bashrc for windows:
