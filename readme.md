@@ -1,6 +1,10 @@
 Git Cheat Sheet
 ====
 
+Fast delete on windows:
+
+rmdir /s /q <path to directory>
+
 ##Less
 
 End of file: `shift+g`
