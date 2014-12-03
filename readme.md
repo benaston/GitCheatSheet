@@ -1,6 +1,17 @@
 Git Cheat Sheet
 ====
 
+DNS Stuff
+
+Check nameservers:
+
+host -t ns bj.ma
+
+Find the domain associated with an IP:
+
+ host 192.168.1.1
+ 
+ 
 Fast delete on windows:
 
 rmdir /s /q <path to directory>
