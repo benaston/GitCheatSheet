@@ -3,13 +3,17 @@ Git Cheat Sheet
 
 DNS Stuff
 
+Check DNS entries:
+
+`host -a codemasters.com`
+
 Check nameservers:
 
-host -t ns bj.ma
+`host -t ns bj.ma`
 
 Find the domain associated with an IP:
 
- host 192.168.1.1
+`host 192.168.1.1`
  
  
 Fast delete on windows:
