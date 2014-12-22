@@ -104,8 +104,8 @@ Cofiguree a tracking branch. track a remote: git branch -u upstream/foo
 `git config --global alias.br branch &&`
 `git config --global alias.ch checkout &&`
 `git config --global alias.co commit &&`
-`git config --global alias.ad add`
-`git config --global alias.pu pull`
+`git config --global alias.ad add &&`
+`git config --global alias.pu pull &&`
 `git config push.default current`
 
 
