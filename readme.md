@@ -1,5 +1,13 @@
+
+
 Git Cheat Sheet
 ====
+
+Bash
+===
+
+ - OSX uses `~/.bash_profile` instead of `.bashrc` file
+ - Use the `open` command on OSX to open an application
 
 DNS Stuff
 
