@@ -1,4 +1,4 @@
-
+angular.element('[data-test="quidget_6"] .quidget__section--prices').scope().pricesCtrl._model.offer
 
 Git Cheat Sheet
 ====
