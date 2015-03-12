@@ -1,3 +1,6 @@
+
+COMMAND="bower install;"; start bash -c "${COMMAND}"; start bash -c "${COMMAND}"; start bash -c "${COMMAND}"; start bash -c "${COMMAND}"; 
+
 angular.element('[data-test="quidget_6"] .quidget__section--prices').scope().pricesCtrl._model.offer
 
 gulp integration 2>&1 | tee /c/sandbox/build.log
