@@ -2,6 +2,10 @@ angular.element('[data-test="quidget_6"] .quidget__section--prices').scope().pri
 
 gulp integration 2>&1 | tee /c/sandbox/build.log
 
+-:user=noemail:**
+-:user=buildagent:**
+-:user=%env.BUILD_USER%:**
+
 Git Cheat Sheet
 ====
 
