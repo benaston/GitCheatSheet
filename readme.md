@@ -1,3 +1,12 @@
+function bower_install() {
+	bower install
+
+	if [ "$?" -ne 0 ]; then bower_install; fi
+}
+
+bower_install
+echo ' ========== \n bower_install done \n ==============' 
+
 
 COMMAND="bower install;"; start bash -c "${COMMAND}"; start bash -c "${COMMAND}"; start bash -c "${COMMAND}"; start bash -c "${COMMAND}"; 
 
