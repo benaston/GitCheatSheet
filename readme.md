@@ -1,3 +1,5 @@
+C:\dev\,-components/**/*.*,-node_modules/**/*.*
+
 function bower_install() {
 	bower install
 
