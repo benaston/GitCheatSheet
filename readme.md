@@ -1,6 +1,10 @@
+http://html5devconf.com/schedule.html
+
     C:\dev\,-components/**/*.*,-node_modules/**/*.*
 
     C:\dev\,-components/**/*.*,-node_modules/**/*.*
+
+
 
 function bower_install() {
 	bower install
