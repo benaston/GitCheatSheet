@@ -1,4 +1,6 @@
-http://html5devconf.com/schedule.html
+    C:\dev\,-components/**/*,-node_modules/**/*
+    
+    http://html5devconf.com/schedule.html
 
     C:\dev\,-components/**/*.*,-node_modules/**/*.*
 
