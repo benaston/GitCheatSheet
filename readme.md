@@ -3,6 +3,8 @@ Splunk search
     sourcetype=efx_evolvefx_uips 13142 searchForCounterparties
     sourcetype=efx_evolvefx_uips_external 13142 searchForCounterparties
 
+    C:\dev\,-components/**/*,-node_modules/**/*,-dist/**/*
+
     C:\dev\,-components/**/*,-node_modules/**/*
     
     http://html5devconf.com/schedule.html
