@@ -1,4 +1,6 @@
+Get the injector:
 
+    angular.element('.ng-scope').injector().get('$log').log('ha');
 
 Run in background:
 
