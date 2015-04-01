@@ -1,3 +1,18 @@
+
+
+Run in background:
+
+    <command> &
+
+Bring a background process to the forground in bash:
+
+    fg <pid>
+
+Ensure command runs even when command window is closed:
+
+    nohop <command> &
+
+
 Splunk search
 
     sourcetype=efx_evolvefx_uips 13142 searchForCounterparties
