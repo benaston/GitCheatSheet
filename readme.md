@@ -1,4 +1,4 @@
-function evaluation. Closure (implemented by setting a pointer in the lexical environment of a function to its containing lexical environment). LexicalEnvironments (blocks and functions), including slots, [[Scope]], runtime evaluation and execution. run to completion. strict mode. Prototypes. reflection for in, getOwnPropertyNames, getPropertyDescriptor, attributes. Controlling modification (freeze, seal etc). Number.
+function evaluation. Closure (implemented by setting a pointer in the lexical environment of a function to its containing lexical environment). LexicalEnvironments (blocks and functions), including slots, [[Scope]], runtime evaluation and execution. run to completion. strict mode. Prototypes. reflection for in, getOwnPropertyNames, getPropertyDescriptor, attributes. Controlling modification (freeze, seal etc). Number. Game loops and how they apply to modern single-page web applications with requestanimationframe.
 
 Symbols, Proxies.
 
