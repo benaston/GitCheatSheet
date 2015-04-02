@@ -1,5 +1,7 @@
 function evaluation. Closure (implemented by setting a pointer in the lexical environment of a function to its containing lexical environment). LexicalEnvironments (blocks and functions), including slots, [[Scope]], runtime evaluation and execution. run to completion. strict mode. Prototypes. reflection for in, getOwnPropertyNames, getPropertyDescriptor, attributes. Controlling modification (freeze, seal etc). Number.
 
+Symbols, Proxies.
+
 Get the injector:
 
     angular.element('.ng-scope').injector().get('$log').log('ha');
