@@ -1,4 +1,4 @@
-LexicalEnvironments, including slots, [[Scope]], runtime evaluation and execution. run to completion. strict mode. 
+LexicalEnvironments (blocks and functions), including slots, [[Scope]], runtime evaluation and execution. run to completion. strict mode. Prototypes. reflection for in, getOwnPropertyNames, getPropertyDescriptor, attributes.
 
 Get the injector:
 
