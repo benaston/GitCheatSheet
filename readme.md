@@ -1,3 +1,5 @@
+LexicalEnvironments, including slots, [[Scope]], runtime evaluation and execution. run to completion. strict mode. 
+
 Get the injector:
 
     angular.element('.ng-scope').injector().get('$log').log('ha');
