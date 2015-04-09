@@ -2,6 +2,8 @@ function evaluation. Closure (implemented by setting a pointer in the lexical en
 
 Symbols, Proxies.
 
+    angular.element('[data-test="quidget_6"] .quidget__section--prices').scope().pricesCtrl._model.offer 
+
 Get the injector:
 
     angular.element('.ng-scope').injector().get('$log').log('ha');
