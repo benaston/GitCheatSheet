@@ -1,3 +1,5 @@
+    var a = [0xae,0x11]; console.log(a.map(function(o) { return String.fromCharCode(o) }))
+
 Show network messages in console in chrome.
 
     Tracer.setTrace(false);
