@@ -1,3 +1,7 @@
+    ['one', 'two', 'three'].filter(i => i.length === 3).map(i => i.split('').reverse().join(''))
+    ['one', 'two', 'three'].reduce((p, i) => i.length === 3 ? p.splice(0, 0, i.split('').reverse().join('')) && p : p, [])
+
+
     var a = [0xae,0x11]; console.log(a.map(function(o) { return String.fromCharCode(o) }))
 
 Show network messages in console in chrome.
