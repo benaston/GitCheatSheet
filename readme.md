@@ -1,6 +1,6 @@
 ```javascript
 println(Array("One", "Two", "Three").filter(_.length == 3).map(_.reverse))
-console.log(['one', 'two', 'three'].filter(i=>i.length === 3).map(i=>i.split('').reverse().join('')))
+console.log(['one', 'two', 'three'].filter(i=>i.length == 3).map(i=>i.split('').reverse().join('')))
 ```
 
     ['one', 'two', 'three'].filter(i => i.length === 3).map(i => i.split('').reverse().join(''))
