@@ -1,3 +1,26 @@
+(function() {
+	require(['foo', 'bar'], function(foo, bar) {
+
+		var transcoder, bytes, buffer; 
+
+		transcoder = new bar(proto);
+		bytes = msg.split(' ');
+
+		debugger;
+		buffer = new Uint8Array(bytes.length);
+		buffer.set(bytes.map(function(i) { return parseInt(i, 16); }))
+		var s = '';
+		for(var x = 0; x < buffer.length; x++) {
+		 s =  s + String.fromCharCode(buffer[x]);
+		}
+
+		console.log(s);
+
+		console.log(transcoder.byteBufferToResponse(s));
+	})();
+}());
+
+
 ```javascript
 println(Array("One", "Two", "Three").filter(_.length == 3).map(_.reverse))
 console.log(['one', 'two', 'three'].filter(i=>i.length == 3).map(i=>i.split('').reverse().join('')))
