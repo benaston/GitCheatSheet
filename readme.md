@@ -1,3 +1,7 @@
+jshint (requires npm install -g jshint)
+trailingspaces
+dopblocker
+
 .jsbeautifyrc
 ```
 {
