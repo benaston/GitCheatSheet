@@ -4,6 +4,8 @@ dopblocker
 
     C:\dev\,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*
 
+    C:\dev\,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*
+
 .jsbeautifyrc
 ```
 {
