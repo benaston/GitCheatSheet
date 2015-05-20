@@ -43,7 +43,7 @@ dopblocker
     "allowed_file_extensions": ["js", "json", "jshintrc", "jsbeautifyrc"],
     "brace_style": "collapse", // [collapse|expand|end-expand|none] Put braces on the same line as control statements (default), or put braces on own line (Allman / ANSI style), or just put end braces on own line, or attempt to keep them where they are
     "break_chained_methods": false, // Break chained method calls across subsequent lines
-    "e4x": false, // Pass E4X xml literals through untouched
+    "e4x": false, // Pass E4X xml literals through untouchedle
     "end_with_newline": false, // End output with newline
     "indent_char": "\t", // Indentation character
     "indent_level": 0, // Initial indentation level
@@ -248,6 +248,7 @@ Previous page: `b`
 Next page: `spacebar`
 Next line: `j`
 Previous line: `k`
+Live watch: `shift+f`
 
 
 .bashrc for windows:
