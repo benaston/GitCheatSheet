@@ -1,3 +1,5 @@
+C:\sandbox\dev\,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-mock-data/**/*,-evolve-cma/**/*,-mockData/**/*,-report/**/*
+
 ##Sublime Packages
 
 BrackertHighlighter
