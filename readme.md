@@ -1,3 +1,13 @@
+##Sublime Packages
+
+BrackertHighlighter
+DocBlocker
+FocusFile
+PackageControl
+SideBarEnhancements
+TrailingSpaces
+
+
 jshint (requires npm install -g jshint)
 trailingspaces
 dopblocker
