@@ -2,12 +2,13 @@ C:\sandbox\dev\,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-moc
 
 ##Sublime Packages
 
-BrackertHighlighter
-DocBlocker
+BracketHighlighter
+DocBlockr
 FocusFile
 PackageControl
 SideBarEnhancements
 TrailingSpaces
+Prettify
 
 
 jshint (requires npm install -g jshint)
