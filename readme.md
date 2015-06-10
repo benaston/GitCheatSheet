@@ -1,3 +1,5 @@
+C:\sandbox\dev,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-mock-data/**/*,-evolve-cma/**/*,-mockData/**/*,-report/**/*,-**/*.css,-libs/**/*,-**/*.html	
+
 {"trailing_spaces_trim_on_save":true,
 "trailing_spaces_include_empty_lines":false,
 "trailing_spaces_highlight_color":"red",
