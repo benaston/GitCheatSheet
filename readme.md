@@ -415,6 +415,10 @@ reports
  
 #####Switch to an existing local branch `git checkout <branch name>`
  
+#####Remove all unstaged changes `git checkout .`
+
+#####Diff two branches `git diff HEAD..<branch-name>`
+ 
 #####Create a new branch `git checkout -b <branch name>`
  
 #####Delete a local branch `git branch -D <branch name>`
