@@ -1,3 +1,6 @@
+:node /c/sandbox/devtools/nodejs/node0.10.37-npm1.4.16-bower1.3.50-gruntcli0.1.13/gulp /c/sandbox/dev/evolve/execution-app
+
+
 C:\sandbox\dev,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-mock-data/**/*,-evolve-cma/**/*,-mockData/**/*,-report/**/*,-**/*.css,-libs/**/*,-**/*.html	
 
 {"trailing_spaces_trim_on_save":true,
