@@ -378,6 +378,8 @@ reports
 .tmp
 ```
 
+Diff between two actual commits themselves: ```diff <(git show 123456) <(git show abcdef)```
+
 #####Check the current config `git config --list` 
 
 #####Check a single setting `git config <setting-name>`
