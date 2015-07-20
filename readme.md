@@ -1,5 +1,14 @@
 :node /c/sandbox/devtools/nodejs/node0.10.37-npm1.4.16-bower1.3.50-gruntcli0.1.13/gulp /c/sandbox/dev/evolve/execution-app
 
+UNIX:
+
+`du -sh <directory>` (count the usage of the directory, without printing sub-directories)
+
+Backtick can be used to send a command to another command, for example:
+
+```bash
+du -s `ls -l`
+```
 
 C:\sandbox\dev,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-mock-data/**/*,-evolve-cma/**/*,-mockData/**/*,-report/**/*,-**/*.css,-libs/**/*,-**/*.html	
 
