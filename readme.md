@@ -1,4 +1,7 @@
 
+    angular.element('.prices-container > div:nth-child(2) > .quidget').scope().shouldRender
+
+
 gulp test-watch | egrep 'FOO::| ERROR | Error |Executed [0-9]+ of'
 
 :node /c/sandbox/devtools/nodejs/node0.10.37-npm1.4.16-bower1.3.50-gruntcli0.1.13/gulp /c/sandbox/dev/evolve/execution-app
