@@ -1,3 +1,5 @@
+    gulp protractor --specs=test/browser/specs/external/spot/foo-spec.js
+
 
     angular.element('.prices-container > div:nth-child(2) > .quidget').scope().shouldRender
 
