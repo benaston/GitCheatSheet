@@ -2,7 +2,7 @@ Require contexts:
 
     require.s.contexts._.registry.defined // get the registered modules in the root context
     
-    require.s.contexts['execution-app-http://h826n7l2uwwvfem.ho.banking.uk.hsbc:23900/../../src-context'].require('execution-app/features/pricing/price-stream-start-scheduler')
+    require.s.contexts['execution-app-http://foo:23900/../../src-context'].require('execution-app/features/pricing/price-stream-start-scheduler')
 
 Debugging protractor:
 
@@ -323,11 +323,9 @@ Live watch: `shift+f`
             alias gr="grunt"
             alias gtc="grunt tc"
             alias b="start bash"
-            alias tce="start chrome http://teamcity.it.hk.hibm.hsbc/project.html?projectId=Evolve_ExecutionApp"
-            alias tcs="start chrome http://teamcity.it.hk.hibm.hsbc/project.html?projectId=Evolve_EvolveHtmlGui"
+            
             alias lo="start chrome http://localhost:23100/components/rig/"
-            alias sit="start chrome https://sit-fxsalesui.uk.hsbc/evolve/"
-            alias sta="start chrome http://hkl100311.hk.hsbc/stash/projects/EVOLVE/repos/evolve/browse"
+            
             cd /c/dev/evolve/execution-app
 
 
@@ -366,8 +364,7 @@ GetBranch()
     alias gt="grunt test"
     alias gtc="grunt tc"
     alias b="start bash"
-    alias tce="start chrome http://teamcity.it.hk.hibm.hsbc/project.html?projectId=Evolve_ExecutionApp"
-    alias tcs="start chrome http://teamcity.it.hk.hibm.hsbc/project.html?projectId=Evolve_EvolveHtmlGui"
+    
     cd /c/dev/evolve/execution-app
 
 
