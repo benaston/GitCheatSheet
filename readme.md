@@ -1,6 +1,8 @@
 Require contexts:
 
     require.s.contexts._.registry.defined // get the registered modules in the root context
+    
+    require.s.contexts['execution-app-http://h826n7l2uwwvfem.ho.banking.uk.hsbc:23900/../../src-context'].require('execution-app/streams/order-stream')
 
 Debugging protractor:
 
