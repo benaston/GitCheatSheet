@@ -1,5 +1,7 @@
 Require contexts:
 
+    angular.element('.prices-container > div:nth-child(2) > .quidget .quidget__inner').scope().$$childHead.tileModel
+
     require.s.contexts._.registry.defined // get the registered modules in the root context
     
     require.s.contexts['execution-app-http://foo:23900/../../src-context'].require('execution-app/features/pricing/price-stream-start-scheduler')
