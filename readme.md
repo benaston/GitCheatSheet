@@ -1,3 +1,13 @@
+Debugging protractor:
+
+Add an option to your local copy of evolve-gulp-build/tasks/test.js like so: 
+
+    gulpProtractor.protractor({ debug: true, ... })
+   
+browser.debugger();
+browser.debug();
+
+
     gulp protractor --specs=test/browser/specs/external/spot/foo-spec.js
 
 
