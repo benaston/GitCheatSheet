@@ -1,3 +1,7 @@
+Require contexts:
+
+    require.s.contexts._.registry.defined // get the registered modules in the root context
+
 Debugging protractor:
 
 Add an option to your local copy of evolve-gulp-build/tasks/test.js like so: 
