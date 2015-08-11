@@ -1,5 +1,7 @@
 Require contexts:
 
+    angular.element('.prices-container > div:nth-child(2) > .quidget .quidget__inner').scope().$$childHead.tileModel.priceStream
+
     angular.element('.prices-container > div:nth-child(2) > .quidget .quidget__inner').scope().$$childHead.tileModel
 
     require.s.contexts._.registry.defined // get the registered modules in the root context
