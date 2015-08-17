@@ -1,5 +1,18 @@
 Require contexts:
 
+            function getRequireDefintionObject() {
+		var contexts, key, regex;
+
+		contexts = requirejs.s.contexts;
+		regex = /^execution-app-/;
+
+		key = findFirst(Object.keys(contexts), function(i) {
+			return regex.test(i);
+		});
+
+		return contexts[key].defined;
+	}
+	
     angular.element('.prices-container > div:nth-child(2) > .quidget .quidget__inner').scope().$$childHead.tileModel.priceStream
 
     angular.element('.prices-container > div:nth-child(2) > .quidget .quidget__inner').scope().$$childHead.tileModel
