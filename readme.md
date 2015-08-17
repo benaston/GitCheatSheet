@@ -4,7 +4,7 @@ Require contexts:
 		var contexts, key, regex;
 
 		contexts = requirejs.s.contexts;
-		regex = /^execution-app-/;
+		regex = /^exe-app-/;
 
 		key = findFirst(Object.keys(contexts), function(i) {
 			return regex.test(i);
