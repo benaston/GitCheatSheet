@@ -318,6 +318,17 @@ rmdir /s /q <path to directory>
 
 ##Less
 
+Forward Search
+
+/ – search for a pattern which will take you to the next occurrence.
+n – for next match in forward
+N – for previous match in backward
+Backward Search
+
+? – search for a pattern which will take you to the previous occurrence.
+n – for next match in backward direction
+N – for previous match in forward direction
+
 End of file: `shift+g`
 Previous page: `b`
 Next page: `spacebar`
