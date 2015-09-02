@@ -1,3 +1,7 @@
+Revert last 3 commits:
+
+```git revert HEAD~3```
+
 Require contexts:
 
             function getRequireDefintionObject() {
