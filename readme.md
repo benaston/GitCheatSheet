@@ -508,6 +508,10 @@ git push origin +alpha-0.3.0
 
 Instead you should use `revert`:
 
+Revert last n commits:
+
+```git revert -n HEAD~n..HEAD```
+
 ```git revert -m 1 <sha>```
 
 #####List remote branches `git branch -r`
