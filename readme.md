@@ -1,3 +1,5 @@
+https://drboolean.gitbooks.io/mostly-adequate-guide/
+
 Revert last 3 commits:
 
 ```git revert HEAD~3```
