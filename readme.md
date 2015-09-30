@@ -1,3 +1,16 @@
+##~/.bash_profile
+
+```bash
+GetBranch()
+{
+  cat ./.git/HEAD 2>/dev/null | sed 's+^ref: refs/heads/++'
+}
+
+export PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[36m\]\$(GetBranch) \[\e[33m\]\w \[\e[0m\]\n"
+alias g="git"
+alias dev="cd ~/Documents/dev"
+```
+
 https://drboolean.gitbooks.io/mostly-adequate-guide/
 
 Revert last 3 commits:
