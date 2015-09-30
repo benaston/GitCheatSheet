@@ -9,6 +9,7 @@ GetBranch()
 export PS1="\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[36m\]\$(GetBranch) \[\e[33m\]\w \[\e[0m\]\n"
 alias g="git"
 alias dev="cd ~/Documents/dev"
+cd ~/Documents/dev
 ```
 
 https://drboolean.gitbooks.io/mostly-adequate-guide/
