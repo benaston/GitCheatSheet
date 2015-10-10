@@ -1,3 +1,7 @@
+##Debugging Node.js
+
+    npm install -g node-inspector
+
 ##~/.bash_profile
 
 ```bash
