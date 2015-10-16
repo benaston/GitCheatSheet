@@ -2,6 +2,27 @@
 
     npm install -g node-inspector
 
+
+##Wait for digest
+
+```javascript
+define(function(require) {
+	'use strict';
+
+	var noop = require('../../../utils/noop');
+
+	function Service($timeout) {
+		return function waitForDigest() {
+			return $timeout(noop);
+		};
+	}
+
+	Service.$inject = ['$timeout'];
+
+	return Service;
+});
+```
+
 ##~/.bash_profile
 
 ```bash
