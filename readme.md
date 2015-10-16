@@ -1,3 +1,8 @@
+##Unix
+
+Create symbolic link: `ln -s foo bar`
+Create hard link (deletions of the link results in deletion of the target): `ln foo bar`
+
 ##Debugging Node.js
 
     npm install -g node-inspector
