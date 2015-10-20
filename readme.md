@@ -1,3 +1,5 @@
+C:\s\dev\e-app,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-/**/*.css,-/**/*.html
+
 ##Unix
 
 Create symbolic link: `ln -s foo bar`
