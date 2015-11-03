@@ -4,7 +4,7 @@ C:\s\dev\e-app,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-/**/
 
 Log Commits
 
-    git log --pretty='%H %ai %f %an' 6bd6c27ebbf8..HEAD
+    git log --pretty='%h %ai %f %an' 6bd6c27ebbf8..HEAD
 
 Create symbolic link: `ln -s foo bar`
 Create hard link (deletions of the link results in deletion of the target): `ln foo bar`
