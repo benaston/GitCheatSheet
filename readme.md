@@ -1,5 +1,8 @@
 C:\s\dev\e-app,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-/**/*.css,-/**/*.html
 
+
+    window.uui.pfJSClientSettings
+
 ##Unix
 
 Log Commits
