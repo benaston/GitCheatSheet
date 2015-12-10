@@ -1,3 +1,6 @@
+ tail -f logfile | egrep -o '((Session Closed)|(Session Created))(?context=\w*)
+
+
 C:\s\dev\e-app,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-/**/*.css,-/**/*.html
 
 
