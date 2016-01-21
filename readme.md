@@ -124,6 +124,11 @@ C:\sandbox\dev,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-mock
 
 C:\sandbox\dev\,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-mock-data/**/*,-evolve-cma/**/*,-mockData/**/*,-report/**/*
 
+#Sublime
+
+Negative lookahead: `\.productType(?!\.)`
+Negative lookbehind: `\.productType(?<!\.)`
+
 ##Sublime Packages
 
 BracketHighlighter
