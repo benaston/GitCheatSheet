@@ -131,6 +131,7 @@ Negative lookbehind: `\.productType(?<!\.)`
 
 ##Sublime Packages
 
+Sublime File Browser https://github.com/aziz/SublimeFileBrowser (F1 binding, plus shift+r for rename)
 BracketHighlighter
 DocBlockr
 FocusFile
