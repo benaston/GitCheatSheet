@@ -1,5 +1,6 @@
  tail -f logfile | egrep -o '((Session Closed)|(Session Created))(?context=\w*)
 
+    git log --graph --decorate --oneline --author="" --since="12 Jan" 
 
 C:\s\dev\e-app,-components/**/*,-node_modules/**/*,-dist/**/*,-__misc/**/*,-/**/*.css,-/**/*.html
 
