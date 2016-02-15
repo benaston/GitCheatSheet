@@ -527,6 +527,8 @@ Diff between two actual commits themselves: ```diff <(git show 123456) <(git sho
 
 ###Merging
 
+Ours is taken to be the code being merged in (pulled from).
+
 `git checkout --ours / --theirs <filename>`
 
 ----
