@@ -57,6 +57,10 @@ cd ~/Documents/dev
 
 https://drboolean.gitbooks.io/mostly-adequate-guide/
 
+Revert a merge:
+
+    git rever -m 1 <sha>
+
 Revert last 3 commits:
 
 ```git revert HEAD~3```
