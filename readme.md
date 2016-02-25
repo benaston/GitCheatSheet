@@ -1,3 +1,7 @@
+killall on windows
+
+taskkill /F /IM <process name>
+
  tail -f logfile | egrep -o '((Session Closed)|(Session Created))(?context=\w*)
 
     git log --graph --decorate --oneline --author="" --since="12 Jan" 
