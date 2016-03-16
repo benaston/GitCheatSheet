@@ -1,3 +1,6 @@
+git apply --ignore-space-change --ignore-whitespace patch.diff
+
+
 killall on windows
 
 taskkill /F /IM <process name>
