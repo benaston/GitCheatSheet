@@ -903,6 +903,17 @@ Show file at a revision: `git show HEAD~4:index.html` or `git show 67834b:index.
 
 -------------
 
+PKI Setup & Encryption
+http://www.czeskis.com/random/openssl-encrypt-file.html
+
+Generate Key
+openssl rand -base64 32 > key.bin
+
+Encrypt Key
+openssl rsautl -encrypt -inkey id_rsa.pub.pem -pubin -in key.bin -out key.bin.enc
+
+Encrypt File
+openssl enc -aes-256-cbc -salt -in SECRET_FILE -out SECRET_FILE.enc -pass file:./key.bin
 
 -----BEGIN PUBLIC KEY-----
 MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoTOfudMVg9MgZ7g1jKQC
