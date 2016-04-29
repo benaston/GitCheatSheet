@@ -899,3 +899,17 @@ Show file at a revision: `git show HEAD~4:index.html` or `git show 67834b:index.
 ##VI
 
 `/` to start search.
+
+
+-------------
+
+
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoTOfudMVg9MgZ7g1jKQC
++qB3rhnS/b7dEvpVgVs9DTzAo8tNBxQJa0lb0YsKpGCXp1+MftBY1xX+TdG0FFA8
+kQt6YFRUDLc6uzv4YUAizBgImTjSk9EzjI5VS+dfd/AwxnZFMpOYpBHtVYWrKEtB
+R9VukavUC04hDP3vyaGLda4LlhYyke1eOWsNwBhN4k+Wr0EKXkg2dQPJT/hS4pbc
+j2uydse5YBFNAqcSqOP8cl2bUAZbCAm8EFpQHcEXTVn+xSupLCN7ZAUXcX07URQ7
+1pWJXeKyg02nwkOnqVn9gbHK/3aJkJ0GhJPk/hgGEMSgUgWzfruvcJCrx/MfHmd9
+bwIDAQAB
+-----END PUBLIC KEY-----
