@@ -1,3 +1,6 @@
+Windows symlink soft link: `mklink /j "1.9.10548" "C:\sandbox\dev\evolve\dist\artifacts" `
+
+
 http://stackoverflow.com/questions/2850369/why-does-git-fast-forward-merges-by-default
 
 Pull has a --no-ff option to force a merge commit. Merge commits are not created by default when it can be fast-forwarded.
