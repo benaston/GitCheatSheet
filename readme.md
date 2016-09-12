@@ -5,7 +5,7 @@ http://stackoverflow.com/questions/2850369/why-does-git-fast-forward-merges-by-d
 
 Pull has a --no-ff option to force a merge commit. Merge commits are not created by default when it can be fast-forwarded.
 
-git apply --ignore-space-change --ignore-whitespace patch.diff
+git apply --ignore-space-change --ignore-whitespace --reject patch.diff
 
 
 killall on windows
