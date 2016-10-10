@@ -1,3 +1,6 @@
+Regex lookbehind `(?<!Manifest)\.isAvailable` (not preceded by Manifest)
+
+
 Windows symlink soft link: `mklink /j "1.9.10548" "C:\sandbox\dev\evolve\dist\artifacts" `
 
 
