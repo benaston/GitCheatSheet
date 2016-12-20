@@ -1,3 +1,33 @@
+const CANCELLED = Object.freeze({
+       cancelled: true,
+});
+
+const factory = {
+       create,
+};
+
+function create(promise) {
+       let isCancelled = false;
+
+       const wrapper = new Promise((resolve, reject) => {
+               promise.then(val =>
+                       isCancelled ? reject(CANCELLED) : resolve(val)
+               );
+               promise.catch(error =>
+                       isCancelled ? reject(CANCELLED) : reject(error)
+               );
+       });
+
+       return {
+               promise: wrapper,
+               cancel() {
+                       isCancelled = true;
+               },
+       };
+};
+
+export default factory;
+
 Regex lookbehind `(?<!Manifest)\.isAvailable` (not preceded by Manifest)
 
 
