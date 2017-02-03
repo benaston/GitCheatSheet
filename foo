@@ -1,0 +1,62 @@
+function incrementalize(source) {
+	var callQueue = [],
+		latch;
+
+	// add event listener to clear callQueue when switching canvases/applications
+	var list = [];
+	list.push = push;
+	if (source.length) {
+		source.forEach(function(i) {
+			list.push(i);
+		});
+	}
+	Object.defineProperty(list, 'eventualLength', {
+		get: function() {
+			return source.length;
+		},
+	});
+	list.shift = shift;
+	return list;
+
+	function push(o) {
+		callQueue.push(getFnForQueue(o));
+		if (!latch) {
+			return callQueue.shift()();
+		}
+	}
+
+	function shift() {
+		return list.shift();
+	}
+
+	function getFnForQueue(o) {
+		return function() {
+			if (latch) {
+				throw 'Method on queue invoked while previous call inFlight.';
+			}
+
+			go(o);
+		}
+	}
+
+	function go(o) {
+		try {
+			latch = true;
+			o.done = o.fail = openLatchAndDrainOne;
+			var firstNew = source.find(function(o) {
+				return list.indexOf(o) === -1;
+			});
+			(firstNew && Array.prototype.push.call(list, firstNew));
+		} catch (err) {
+			logger.error("Error restarting price stream: " + err);
+			openLatchAndDrainOne();
+		}
+	}
+
+	function openLatchAndDrainOne() {
+		latch = false;
+		(callQueue.length && callQueue.shift()());
+	}
+}
+
+return _.memoize(incrementalize);
