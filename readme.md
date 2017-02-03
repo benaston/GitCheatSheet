@@ -1,3 +1,5 @@
+**git branch --sort=-committerdate**
+
 const CANCELLED = Object.freeze({
        cancelled: true,
 });
