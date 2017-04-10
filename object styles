@@ -1,0 +1,120 @@
+The new keyword was added to JavaScript by Brendan Eich when Netscape co-founder Marc Andreessen asked him to "make it look like Java" to help with language adoption (in 1995 Java was the new hotness).
+The ECMAScript standard henceforth evolved in two different syntactic directions: that of classical object-orientation and that of "object-based" (for lack of a better term) object-orientation. This latter approach was championed by Douglas Crockford.
+Most JavaScript developers, having come from Java or C# pursue initially the classical object oriented syntactic approach using constructor functions and (in ES2015+) class syntactic sugar.
+I invite you to consider the following notes on the classical versus object-based styles.
+Example 1: Classical Definition - Constructor Functions
+function Foo(dependency1, dependency2, dependency3) {
+  this._dependency1 = dependency1;
+  this._dependency2 = dependency2;
+  this._dependency3 = dependency3;
+  this._fooState = null;
+}
+
+Foo.prototype.method1 = function() {
+  return this.dependency3.method() * 2;
+};
+
+Foo.prototype.method2 = function() {
+  /* ...  */
+};
+
+export default Foo;
+Example 2: Classical Definition - Classes
+class Foo() {
+  constructor(dependency1, dependency2, dependency3) {
+    this._dependency1 = dependency1;
+    this._dependency2 = dependency2;
+    this._dependency3 = dependency3;
+    this._fooState = null;
+  }
+
+  method1() {
+    return this.dependency3.method() * 2;
+  };
+
+  method2() {
+    /* ...  */
+  };
+}
+
+export default Foo;
+Example 3: Classical Testing
+import dependency1 from './dependency1';
+import dependency2 from './dependency2';
+import dependency3 from './dependency3';
+import Foo from './foo';
+
+describe('Foo.method1', () => {
+  var target;
+  beforeEach(() => {
+    spyOn(dependency3, 'method').and.returnValue(1);
+    target = new Foo(dependency1, dependency2, dependency3)
+  })
+  it('should do foo', () => {
+    expect(target.method1()).toBe(2);
+  })
+});
+Example 4: Classical Usage
+import dependency1 from './dependency1';
+import dependency2 from './dependency2';
+import dependency3 from './dependency3';
+import Foo from './foo';
+
+const foo = new Foo(dependency1, dependency2, dependency3);
+foo.method1();
+Example 5: Object-based Definition
+import dependency1 from './dependency1';
+import dependency2 from './dependency2';
+import dependency3 from './dependency3';
+
+let fooState = null;
+
+const foo = {
+  method1, 
+  method2,
+};
+
+function method1() {
+  return dependency3.method() * 2;
+}
+
+function method2() {
+  /* ...  */
+};
+
+export default foo;
+Example 6: Object-based Testing
+import dependency3 from './dependency3';
+import target from './foo';
+
+describe('foo.method1', () => {
+  beforeEach(() => {
+    spyOn(dependency3, 'method').and.returnValue(1);
+  })
+  it('should do foo', () => {
+    expect(target.method1()).toBe(2);
+  })
+});
+Example 7: Object-based Usage
+import foo from './foo';
+foo.method1();
+Notes
+this is dynamic in JavaScript and changes according to the way a function is called. This can cause subtle errors. The object-based approach leads to less frequent use of this, and makes the target of functions more explicit.
+in the classical approach, single-responsibility principle is violated because we typically define the API and the implementation in the same breath. The object-based approach lends itself to easier separation of API definition and logic definition where it is needed to improve clarity (although keeping them together is possible too).
+much of the time you only need a single instance of an object. The classical approach delegates object instantiation to the client code, leading to more chance of users introducing bugs to do with object instantiation (e.g. when, where and how many should be instantiated?). Furthermore, the classical approach implies there will be many instances which is often misleading does not communicate that semantic intent.
+the classical approach without using the class keyword is syntactically noisy when using the prototype property of the constructor function.
+Java-style dependency injection creates a coupling between dependencies and their position in the constructor arguments list. This is brittle and makes testing and maintenance harder because everything needs to be expicitly supplied when instantiating the object. Positioning also needs to be maintained over time.
+Java-style dependency injection in JavaScript is syntactically noisy. Consider the following kind of constructor busy-work that is noisy, error-prone and adds nothing very useful:
+this._dependency1 = dependency1;
+this._dependency2 = dependency2;
+this._dependency3 = dependency3;
+Java-style dependency injection in JavaScript moves responsibility for knowing about the services needed by the object into client code, increasing the chance of wire-up bugs.
+Java-style dependency injection in JavaScript is no more testable than the object-based syntactic alternative and is actually LESS convenient to test in JavaScript because responsibility for object instantation and injection of dependencies in the correct order (note that this will need to be maintained as this changes over time) is moved to the test set-up code.
+Java-style dependency injection in JavaScript is harder to refactor than the object-based syntax alternative because of all the wire-up required at the point-of use in tests, DI container wire-up (if one is being used) and in client code.
+the copying of dependency references into "_private" properties on the resulting object modifies the public API of the object, giving the object a greater surface area, leading to a greater possibility for bugs.
+using this in combination with "_private" state/methods makes it more complicated to understand how parts of the object hang together as state is made implicit, rather than the object-based approach that guides you towards a purer functional style (i.e. function calls result in fewer side-effects).
+private functionality and state in the object-based approach is GENUINELY private, being inside a closure.
+as can be seen above, there is often less to type in the object-based approach.
+the classical approach leads developers down the road of classical inheritance that has shown itself to be brittle and makes reasoning about behavior harder.
+Summary
+When developing JavaScript I invite you consider whether you really need Java-style dependency injection, classes, constructor functions and dynamic function targets (this). The object-based syntactic style can lead to simpler, better encapsulated, more loosely coupled, more easily tested and modifiable code.
