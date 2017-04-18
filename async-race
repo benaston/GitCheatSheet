@@ -1,0 +1,4 @@
+function asyncRace(fn, timeout) {
+  var latch = false;
+  function go() {}
+}
