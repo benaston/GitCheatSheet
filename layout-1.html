@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style>
+	* {
+		box-shadow: 0 0 0 1px black inset;
+		box-sizing: border-box;
+		padding: 0;
+		margin: 0;
+	}
+	
+	html,
+	body {
+		height: 100%;
+	}
+	
+	.application {
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+	}
+	
+	.panel {
+		/*height: 100%;*/
+	}
+	
+	.header {
+		height: 200px;
+	}
+	
+	.data {
+		height: calc(100% - 200px);
+		overflow: scroll;
+	}
+	</style>
+</head>
+
+<body>
+	<div class="application">
+		<div class="panel">
+			<div class="header">this is the header</div>
+			<div class="data">this is the data</div>
+		</div>
+	</div>
+	<script>
+		document.querySelector('.data').innerHTML = Array.from({length: 100}).reduce(p => p += 'foo<br/>', '');
+	</script>
+</body>
+</html>
