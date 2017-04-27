@@ -1,5 +1,5 @@
 var coordinator = {};
-var latch = false; // Set when a price stream request is "in flight".
+var latch = false; // Set when a request is "in flight".
 var callQueue = [];
 
 /**
