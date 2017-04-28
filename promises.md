@@ -70,14 +70,14 @@ function Promise(executor = ()=>{}) {
     const thens = [];
     const p = {
         then,
-        catch: ccatch,
+        catch: ccatch, // `catch` is a reserved keyword in JavaScript
         resolve,
         reject,
     };
     machine.transition(p, states.pending);
     executor(resolve, reject);
     return p;
-    // `resolve`, `reject`, `then` and `catch` go in here...
+    // `resolve`, `reject`, `then` and `ccatch` go in here...
 }
 ```
 
@@ -98,7 +98,7 @@ This is the heart of a promise implementation. It enables composability, branchi
 
 A `catch` implementation is not supplied here.
 
-What follows is a simplified (but viable) `then` implementation:
+What follows is a simplified (but viable for further development) `then` implementation. Error handling has not been included.
 
 ```
 function then(cb) {
