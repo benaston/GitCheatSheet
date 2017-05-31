@@ -1,3 +1,7 @@
+disk space on solaris/unix:
+
+du -sh * | sort -h | less
+
 **git branch --sort=-committerdate**
 
 const CANCELLED = Object.freeze({
