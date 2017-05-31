@@ -1,6 +1,7 @@
 disk space on solaris/unix:
 
-du -sh * | sort -h | less
+df -h (get the disk usage/free)
+du -sh * | sort -h | less (get disk space usage by file)
 
 **git branch --sort=-committerdate**
 
