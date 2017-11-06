@@ -684,6 +684,10 @@ Revert last n commits:
 
 `git checkout abcde file/to/restore`
 
+##### Ignore specific files in diff
+
+`git diff cd876000d7f -- . ':(exclude)lib/*'`
+
 ----
 
 ###The Index
